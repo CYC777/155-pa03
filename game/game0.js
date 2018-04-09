@@ -28,13 +28,14 @@ var monstersnames = ["monster2.obj"];
 var monsterstextures = ["monstert1.jpg", "monstert7.jpg", "monstert6.jpg"];
 var monsterscales = [0.05, 0.06,0.07, 0.05];
 
-var objnames = ["DeadTree.obj", "rock.obj", "house.obj"];
-var objtextures = ["treetexture.jpg","rocktexture.jpg", "houset.jpg"];
-var objscales = [1,2,0.01];
+var objnames = ["DeadTree.obj","DeadTree.obj", "rock.obj", "house.obj"];
+var objtextures = ["treetexture.jpg","treetexture.jpg","rocktexture.jpg", "houset.jpg"];
+var objscales = [1,1,2,0.01];
 
 var cone;
 var npc;
 var lotus;
+var level1, level1Geo;
 
 var endScene, endCamera, endText;
 var startScene, startCamera;//Jacob
@@ -175,7 +176,8 @@ function init(){
 	initRenderer();
 	createMainScene();
 	//create lotus
-	createGroup("lotus.obj", "lotust.jpg", -1 * (40 + randN(20)), randN(60), 1.5);
+	var p = genRandLoc();
+	createGroup("lotus.obj", "lotust.jpg",p[0], p[1],1.5);
 
 }
 
@@ -197,7 +199,7 @@ function createMainScene(){
 	// create the ground and the skybox
 	var ground = createGround('deserttexture.jpg');
 	scene.add(ground);
-	var skybox = createSkyBox('cloudysky.jpg',1);
+	var skybox = createSkyBox('cloudyt2.jpg',1);
 	scene.add(skybox);
 
 	// create the avatar
@@ -213,7 +215,7 @@ function createMainScene(){
 
 	initMonsterList(3);
 	// initMonsterList2();
-	initFenceList(5);
+	initFenceList(3);
 
 	// createObjMtlModel();
 
@@ -269,13 +271,55 @@ function createMainScene(){
 	initScoreTextMesh();
 	// initScoreScoreTextMesh();
 
+
+	//---------------------------------------JACOB(TOP)--------------------------------------------------------------------------
+	initLevel1OBJ();
+	//these walls are for preventing the player from walking under the terrain
+	//center wall
+	var wall1 = createWall('white',49,5,75);
+	wall1.position.set(-6,0,14);
+	scene.add(wall1);
+
+	//SE box wall
+	var wall2 = createWall('white',60,5,60);
+	wall2.position.set(66.6,0,-32.5);
+	scene.add(wall2);
+
+	//NE box wall
+	var wall3 = createWall('white',60,5,60);
+	wall3.position.set(68,0,58);
+	scene.add(wall3);
+
+	//S long wall
+	var wall4 = createWall('white',90,5,1);
+	wall4.position.set(-4,0,93);
+	scene.add(wall4);
+
+	//N long wall
+	var wall5 = createWall('white',90,5,1);
+	wall5.position.set(-6,0,-52);
+	scene.add(wall5);
+
+	//W long wall
+	var wall6 = createWall('white' ,1,5,150);
+	wall6.position.set(-47.5,0,20);
+	scene.add(wall6);
+
+	//E long wall
+	var wall7 = createWall('white' ,1,5,40);
+	wall7.position.set(100.6,0,10);
+	scene.add(wall7);
+
+	//-------------------------------------JACOB(BOTTOM)------------------------------------------------------
+
+
 }
 function initFenceList(n) {
 	// createOBJList(phyobjs, objnames, objtextures, objscales, 0);
 	for (var i = 0; i < n; i++) {
+		var p = genRandLoc();
 
-		createObjMtlModel(null, fences,
-			Math.random() * 30 + randN(20) * randN(-1), Math.random() * -30 * randN(3));
+		createObjMtlModel(null, fences,p[0], p[1]);
 
 
 	}
@@ -289,12 +333,14 @@ function initMonsterList(n) {
 
 		var x = 0, z = 0;
 		if (lotus == null) {
-			x = Math.random() * 50 + 10;
-			z = Math.random() * (-50)  - 10;
+			var p = genRandLoc();
+			x = p[0];
+			z = p[1];
+
 		}
 		else {
-			x = lotus.position.x + (Math.random() * 8 + 2)* (randN(1) > 0.5 ? -1 : 1);
-			z = lotus.position.z  + (Math.random() * 8 + 2) * (randN(1) > 0.5 ? 1 : -1);
+			x = lotus.position.x + (Math.random() * 2 + 2)* (randN(1) > 0.5 ? -1 : 1);
+			z = lotus.position.z  + (Math.random() * 2 + 2) * (randN(1) > 0.5 ? 1 : -1);
 		}
 
 		createMonstermodel(monsters, tmpmonster, monstersnames[Math.floor(monstersnames.length - 0.01)],
@@ -319,8 +365,10 @@ function initMonsterList2() {
 function createOBJList(list, names, textures, scales, gravity) {
 	for (var i = 0; i < objnames.length; i++) {
 		var mesh = null;
+		var p = genRandLoc();
+
 		mesh = createOBJmodel(mesh, names[i], textures[i],
-			Math.random() * 50, Math.random() * -50, scales[i], gravity);
+			p[0], p[1], scales[i], gravity);
 		list.push(mesh);
 	}
 }
@@ -354,7 +402,7 @@ function createScoreText(font) {
 	scoreText = new THREE.Mesh( textGeometry1, textMaterial1);
 
 
-	scoreText.position.set(40, 20, 40);
+	scoreText.position.set(40, 30, 40);
 
 	scene.add(scoreText);
 
@@ -568,7 +616,7 @@ return mesh;
 
 function createGround(image){
 	// creating a textured plane which receives shadows
-	var geometry = new THREE.PlaneGeometry( 180, 180, 128 );
+	var geometry = new THREE.PlaneGeometry( 200, 200, 200);
 	var texture = new THREE.TextureLoader().load( '../images/'+image );
 	texture.wrapS = THREE.RepeatWrapping;
 	texture.wrapT = THREE.RepeatWrapping;
@@ -587,7 +635,7 @@ function createGround(image){
 
 function createSkyBox(image,k){
 	// creating a textured plane which receives shadows
-	var geometry = new THREE.SphereGeometry( 80, 80, 80 );
+	var geometry = new THREE.SphereGeometry( 120, 120, 120 );
 	var texture = new THREE.TextureLoader().load( '../images/'+image );
 	texture.wrapS = THREE.RepeatWrapping;
 	texture.wrapT = THREE.RepeatWrapping;
@@ -844,7 +892,8 @@ function initmonkeyAvatarOBJ(){
 					var geometry = suzyOBJ.children[0].geometry;
 					var material = suzyOBJ.children[0].material;
 					suzyOBJ = new Physijs.BoxMesh(geometry,material);
-					suzyOBJ.position.set(20,20,20);
+					var p = genRandLoc();
+					suzyOBJ.position.set(p[0],20,p[1]);
 					scene.add(suzyOBJ);
 					console.log("just added suzyOBJ");
 					//suzyOBJ = new Physijs.BoxMesh(obj);
@@ -877,12 +926,21 @@ function cycInitAvatar() {
 			//geometry.scale.set(0.5,0.5,0.5);
 			avatar = new Physijs.BoxMesh( geometry, material );
 			avatar.scale.set(0.5,0.5,0.5);
+			avatar.__dirtyPosition = true;
+			avatar.position.set(51,10,-37);
+			avatar.rotateY(-Math.PI/2);
+			avatar.__dirtyRotation=true;
 
 			avatar.add(avatarCam);
 
 			avatar.translateY(20);
 			avatarCam.translateY(6);
 			avatarCam.translateZ(20);
+
+			// newobj.position.set(51, ,z);
+			// newobj.__dirtyPosition = true;
+
+
 			scene.add(avatar);
 
 			gameState.camera = avatarCam;
@@ -1015,7 +1073,9 @@ function keydown(event){
 
 
 	// this is the regular scene
+	console.log("Keydown before switch: '"+event.key+"'");
 	switch (event.key){
+
 		// change the way the avatar is moving
 		case "w": controls.fwd = true;  break;
 		case "s": controls.bwd = true; break;
@@ -1097,6 +1157,10 @@ function updateMonsters() {
 			}
 		}
 		monsters[i].setLinearVelocity(monsters[i].getWorldDirection().multiplyScalar(velocity));
+		// if (level1Geo != null) {
+		// 	var boo = level1Geo.containsPoint(monsters[i].position);
+		// 	console.log("check boundingbox contains ? " + boo);
+		// }
 	}
 }
 
@@ -1109,6 +1173,116 @@ function updateNPC(){
 	}
 	npc.setLinearVelocity(npc.getWorldDirection().multiplyScalar(velocity));
 }
+
+var seed = 1;
+function random() {
+	var x = Math.sin(seed++) * 10000;
+	return x - Math.floor(x);
+}
+//a,b is two diagonal points
+function genRandLoc() {
+	a = [-45, -49];
+	b = [98,90];
+	nofly = [
+		[[-31,-24], [19,52]],
+		[[36.6,28],[98,90]],
+		[[38,-49],[98, -4]]
+	];
+
+	var xrangeMin = a[0];
+	var xrangeMax = b[0];
+
+	var zrangeMin = a[1];
+	var zrangeMax = b[1];
+
+	var xRand = 0;
+	var zRand = 0;
+	while (true) {
+		xRand = xrangeMin + (xrangeMax - xrangeMin) * Math.random();
+		zRand = zrangeMin + (zrangeMax - zrangeMin) * Math.random();
+		var p = [xRand, zRand];
+		if (!checkInRange(p,nofly[0]) && !checkInRange(p,nofly[1]) && !checkInRange(p,nofly[2]))
+			break;
+	}
+	console.log("random location is " + xRand + ", " + zRand);
+	return [xRand, zRand];
+
+
+}
+
+function checkInRange(p, rect) {
+	var a = rect[0];
+	var b = rect[1];
+
+	var xrangeMin = a[0];
+	var xrangeMax = b[0];
+
+	var zrangeMin = a[1];
+	var zrangeMax = b[1];
+
+	var x = p[0];
+	var z = p[1];
+
+	if (x <= xrangeMax && x >= xrangeMin &&
+		z <= zrangeMax && z >= zrangeMin) {
+		return true;
+	}
+	else return false;
+}
+
+
+//---------------------------------------------------JACOB(TOP)-----------------------------------------------------------------
+//this function creates the terrain mesh from the blender object
+function initLevel1OBJ(){
+	var loader = new THREE.OBJLoader();
+	loader.load("../models/level1redone.obj",
+		function ( obj) {
+			console.log("loading obj file");
+			console.dir(obj);
+			//scene.add(obj);
+			obj.castShadow = true;
+			level1 = obj;
+			theOBJ = obj;
+
+			var geometry = level1.children[0].geometry;
+			//var material = level1.children[0].material;
+
+			var texture = new THREE.TextureLoader().load( '../images/rocks.jpg' );
+			texture.wrapS = THREE.RepeatWrapping;
+			texture.wrapT = THREE.RepeatWrapping;
+			texture.repeat.set( 1, 1 );
+			var material = new THREE.MeshLambertMaterial( { color: 0xffffff,  map: texture ,side:THREE.DoubleSide} );
+
+
+			// var pmaterial = new Physijs.createMaterial(material,0.9,0);
+
+
+			// level1= new Physijs.BoxMesh(geometry,pmaterial, 0);
+
+			level1 = new THREE.Mesh(geometry, material);
+			level1.position.set(20,-13,20);
+
+			//scale up the mesh
+			var s = 10.5;
+			level1.scale.y=s;
+			level1.scale.x=s;
+			level1.scale.z=s;
+
+			scene.add(level1);
+			console.log("just added level1");
+
+
+		},
+		function(xhr){
+			console.log( (xhr.loaded / xhr.total * 100) + '% loaded' );},
+
+		function(err){
+			console.log("error in loading: "+err);}
+	)
+}
+
+//-----------------------------------------------JACOB(BOTTOM)---------------------------------------------------------------------
+
 
 function updateAvatar(){
 	"change the avatar's linear or angular velocity based on controls state (set by WSAD key presses)"
@@ -1149,9 +1323,9 @@ function updateAvatar(){
 
 	if (controls.reset){
         avatar.__dirtyPosition = true;
-        avatar.position.set(40,10,40);
+        avatar.position.set(51,10,-37);
 	}
-	if (lotus != null && avatar.position.distanceTo(lotus.position) < 3 && gameState.score >= 5) {
+	if (lotus != null && avatar.position.distanceTo(lotus.position) < 3 && gameState.score >= 4) {
 		gameState.scene = 'youwon';
 	}
 }
@@ -1213,7 +1387,7 @@ function animate() {
 
 		case "main":
 			if (!createdGuardian && lotus != null) {
-				initMonsterList(5);
+				initMonsterList(3);
 				createdGuardian = true;
 			}
 			updateAvatar();
