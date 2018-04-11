@@ -41,10 +41,6 @@ var endScene, endCamera, endText;
 var startScene, startCamera;//Jacob
 var loseScene, loseCamera;
 
-var instructionsScene;
-var instructionsCamera; //Ethan
-
-
 var deadBox, scoreText;
 
 var meaningless = 0;
@@ -55,7 +51,7 @@ var createdGuardian = false;
 
 var controls =
 	     {fwd:false, bwd:false, left:false, right:false,
-				speed:10, fly:false, reset:false,
+				speed:10, fly:false, reset:false, up:false,
 		    camera:camera}
 
 var gameState =
@@ -65,7 +61,6 @@ var gameState =
 // Here is the main game control
 init(); //
 initControls();
-
 animate();  // start the animation loop!
 
 
@@ -167,134 +162,6 @@ function createStartText(font) {
 
 //Jacob----------------------------------------------------------------bottom
 
-//Ethan----------------------------------------------------------------top
-
-function initInstructionsTextMesh(){
-	var loader = new THREE.FontLoader();
-	loader.load( '/fonts/helvetiker_regular.typeface.json',
-							 createPrologueText);
-}
-
-function createInstructionsScene(){
-	instructionsScene = initScene();
-	initInstructionsTextMesh();
-	
-
-	instructionsCamera = new THREE.PerspectiveCamera(  75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-	instructionsCamera.position.set(0,0,15);
-	instructionsCamera.lookAt(0,0,0);
-
-	
-
-
-
-
-}
-
-function createPrologueText(font) {
-	var introText =
-		new THREE.TextGeometry ('Enemies approach and the only weapon you have is your wits!',
-		{
-			font: font,
-			size: 2,
-			height: 0,
-			curveSegments: 12,
-			bevelEnabled: false,
-			bevelThickness: 0.01,
-			bevelSize: 0.08,
-			bevelSegments: 5
-		}
-	);
-
-	var instructionsTextLine1 =
-		new THREE.TextGeometry ('Defeat the enemies by approaching them and luring them into the barricades.',
-		{
-			font: font,
-			size: 2,
-			height: 0,
-			curveSegments: 12,
-			bevelEnabled: false,
-			bevelThickness: 0.01,
-			bevelSize: 0.08,
-			bevelSegments: 5
-		}
-		);
-		
-	var instructionsTextLine2 =
-		new THREE.TextGeometry ('Defeat all the enemies to win!',
-		{
-			font: font,
-			size: 2,
-			height: 0,
-			curveSegments: 12,
-			bevelEnabled: false,
-			bevelThickness: 0.01,
-			bevelSize: 0.08,
-			bevelSegments: 5
-		}
-	);
-		
-	var instructionsTextLine3 =
-		new THREE.TextGeometry ('Press the "u" key to continue.',
-		{
-			font: font,
-			size: 2,
-			height: 0,
-			curveSegments: 12,
-			bevelEnabled: false,
-			bevelThickness: 0.01,
-			bevelSize: 0.08,
-			bevelSegments: 5
-		}
-	);
-		
-	var instructionsTextLine4 =
-		new THREE.TextGeometry ('Use the WASD keys to move, M to move faster, and R to reset.',
-		{
-			font: font,
-			size: 2,
-			height: 0,
-			curveSegments: 12,
-			bevelEnabled: false,
-			bevelThickness: 0.01,
-			bevelSize: 0.08,
-			bevelSegments: 5
-		}
-	);
-
-	var instructionsTextMaterial1 = new THREE.MeshBasicMaterial ( {color: 'yellow'});
-	var instructionsMesh1 = new THREE.Mesh( introText, instructionsTextMaterial1);
-	instructionsMesh1.position.set(-40,0,-15);
-	instructionsScene.add(instructionsMesh1);
-
-
-	var instructionsTextMaterial2 = new THREE.MeshBasicMaterial ( {color: 'yellow'});
-	var instructionsMesh2 = new THREE.Mesh( instructionsTextLine1, instructionsTextMaterial2);
-	instructionsMesh2.position.set(-49,-4,-20);
-	instructionsScene.add(instructionsMesh2);
-	
-	var instructionsTextMaterial3 = new THREE.MeshBasicMaterial ( {color: 'yellow'});
-	var instructionsMesh3 = new THREE.Mesh( instructionsTextLine2, instructionsTextMaterial3);
-	instructionsMesh3.position.set(-20,-8,-20);
-	instructionsScene.add(instructionsMesh3);
-	
-	var instructionsTextMaterial4 = new THREE.MeshBasicMaterial ( {color: 'yellow'});
-	var instructionsMesh4 = new THREE.Mesh( instructionsTextLine3, instructionsTextMaterial4);
-	instructionsMesh4.position.set(-20,-16,-20);
-	instructionsScene.add(instructionsMesh4);
-	
-	var instructionsTextMaterial5 = new THREE.MeshBasicMaterial ( {color: 'yellow'});
-	var instructionsMesh5 = new THREE.Mesh( instructionsTextLine4, instructionsTextMaterial5);
-	instructionsMesh5.position.set(-40,-12,-20);
-	instructionsScene.add(instructionsMesh5);
-	
-	console.log("addted textMesh to scene");
-}
-
-//Ethan----------------------------------------------------------------bottom
-
-
-
 
 /**
   To initialize the scene, we initialize each of its components
@@ -304,20 +171,13 @@ function init(){
 	scene = initScene();
 
 	createStartScene();//Jacob
-	
-	createInstructionsScene(); //Ethan
-	
 	createEndScene();
 	createLoseScene();
 	initRenderer();
 	createMainScene();
-
 	//create lotus
-
-
 	var p = genRandLoc();
 	createGroup("lotus.obj", "lotust.jpg",p[0], p[1],1.5);
-  playGameMusic() //Ethan
 
 }
 
@@ -664,7 +524,7 @@ function playGameMusic(){
 
 	// load a sound and set it as the Audio object's buffer
 	var audioLoader = new THREE.AudioLoader();
-	audioLoader.load( '/sounds/gameSoundtrack.mp3', function( buffer ) {
+	audioLoader.load( '/sounds/loop.mp3', function( buffer ) {
 		sound.setBuffer( buffer );
 		sound.setLoop( true );
 		sound.setVolume( 0.05 );
@@ -754,6 +614,15 @@ mesh.castShadow = true;
 return mesh;
 }
 
+function createInvisibleWall(w,h,d){
+		var geometry = new THREE.BoxGeometry( w, h, d);
+		var materialOptions = {transparent: true, opacity: 0}
+		var material = new THREE.MeshLambertMaterial(materialOptions);
+		mesh = new Physijs.BoxMesh( geometry, material, 0 );
+		return mesh;
+}
+
+
 function createGround(image){
 	// creating a textured plane which receives shadows
 	var geometry = new THREE.PlaneGeometry( 200, 200, 200);
@@ -821,6 +690,10 @@ function createObjMtlModel(newobj2, fences, x, z) {
 			newobj2.scale.set(2.5,2.5,2.5);
 			fences.push(newobj2);
 			scene.add(newobj2);
+
+			var wall = createInvisibleWall(5.5,6,1);
+			wall.position.set(x,0,z);
+			scene.add(wall);
 
 			//ver1
 			// var geometry = object.children[0].geometry;
@@ -1203,16 +1076,9 @@ function keydown(event){
 
 	}
 	if (gameState.scene == 'start' && ( event.key == 'p' || event.key == 'P')) {
-		gameState.scene = 'instructions';
+		gameState.scene = 'main';
 
 	}
-	
-	if(gameState.scene == 'instructions' && (event.key == 'u' || event.key == 'U')){
-		
-		gameState.scene = 'main';
-		
-	}
-	
 	if (gameState.scene == 'main' && (event.key == 'r')) {
         gameState.scene = 'main';
 	}
@@ -1230,9 +1096,10 @@ function keydown(event){
 		case "d": controls.right = true; break;
 		case "g": controls.strafeRight= true; break;
 		case "l": controls.strafeLeft= true; break;
-		// case "r": controls.up = true; break;
+		case "x": controls.up = true; break;
 		case "f": controls.down = true; break;
 		case "m": controls.speed = 30; break;
+
 
 		case "k":
 			avatar.position.set(0,60,0);
@@ -1276,11 +1143,12 @@ function keyup(event){
 		case "d": controls.right = false; break;
 		case "g": controls.strafeRight= false; break;
 		case "l": controls.strafeLeft= false; break;
-		case "r": controls.up    = false; break;
+		//case "r": controls.up    = false; break;
 		case "f": controls.down  = false; break;
 		case "m": controls.speed = 10; break;
         case " ": controls.fly = false; break;
         case "h": controls.reset = false; break;
+				case "x": controls.up=false;break;
 	}
 }
 
@@ -1436,27 +1304,30 @@ function updateAvatar(){
 
 	var forward = avatar.getWorldDirection();
 
+  var vertical_velocity = avatar.getLinearVelocity().y;
+	var new_velocity;
 	if (controls.fwd){
-		avatar.setLinearVelocity(forward.multiplyScalar(controls.speed));
+		new_velocity = forward.multiplyScalar(controls.speed);
 	} else if (controls.bwd){
-		avatar.setLinearVelocity(forward.multiplyScalar(-controls.speed));
+		new_velocity = forward.multiplyScalar(-controls.speed);
 	} else if (controls.strafeLeft){
     var axis = new THREE.Vector3( 0, 1, 0 );
     var angle = Math.PI / 2;
 		var sideways = forward;
     sideways.applyAxisAngle( axis, angle );
-    avatar.setLinearVelocity(sideways.multiplyScalar(controls.speed));
+    new_velocity = sideways.multiplyScalar(controls.speed);
 	}else if (controls.strafeRight){
       var axis = new THREE.Vector3( 0, 1, 0 );
       var angle = Math.PI / 2;
 			var sideways = forward;
       sideways.applyAxisAngle( axis, angle );
-			avatar.setLinearVelocity(sideways.multiplyScalar(-controls.speed));
+			new_velocity = sideways.multiplyScalar(-controls.speed);
 	} else {
-		var velocity = avatar.getLinearVelocity();
-		velocity.x=velocity.z=0;
-		avatar.setLinearVelocity(velocity); //stop the xz motion
+		new_velocity = avatar.getLinearVelocity();
+		new_velocity.x=new_velocity.z=0;
 	}
+	new_velocity.y = vertical_velocity; //preserve vertical velocity
+	avatar.setLinearVelocity(new_velocity);
 
 	if (controls.fly){
         avatar.setLinearVelocity(new THREE.Vector3(0,controls.speed,0));
@@ -1515,7 +1386,7 @@ function updateFences() {
 function animate() {
 
 	requestAnimationFrame( animate );
-	
+
 
 	if (gameState.health == 0) gameState.scene = 'youlose';
 	switch(gameState.scene) {
@@ -1526,15 +1397,6 @@ function animate() {
 		//console.log("Rendering start screen");
 		break;
 		//Jacob--------------------------------------------------------------bottom
-		
-		//Ethan----------------------------------------------------------------top
-		
-		case "instructions":
-		renderer.render(instructionsScene, instructionsCamera);
-		//console.log("Rendering instructions screen");
-		break;
-		
-		//Ethan----------------------------------------------------------------bottom
 
 		case "youwon":
 			//endText.rotateY(0.005);
