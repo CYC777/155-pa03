@@ -215,7 +215,7 @@ function createMainScene(){
 
 	initMonsterList(3);
 	// initMonsterList2();
-	initFenceList(3);
+	initFenceList(6);
 
 	// createObjMtlModel();
 

@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5557ae1a-6a38-48c2-aae6-d94cc417e660" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/game/game0.js" afterPath="$PROJECT_DIR$/game/game0.js" />
     </list>
@@ -21,56 +20,10 @@
       <file leaf-file-name="game0.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/game/game0.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="583">
-              <caret line="35" column="8" lean-forward="true" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
+            <state relative-caret-position="240">
+              <caret line="244" column="5" lean-forward="false" selection-start-line="244" selection-start-column="5" selection-end-line="244" selection-end-column="5" />
               <folding>
-                <element signature="n#!!block;n#createLoseScene#0" expanded="false" />
-                <element signature="n#!!block;n#createEndScene#0" expanded="false" />
-                <element signature="n#!!block;n#createStartScene#0" expanded="false" />
-                <element signature="n#!!block;n#initTextMesh#0" expanded="false" />
-                <element signature="n#!!block;n#createStartText#0" expanded="false" />
-                <element signature="e#5632#5672#0" expanded="false" />
-                <element signature="e#5962#6004#0" expanded="false" />
-                <element signature="e#6252#6285#0" expanded="false" />
-                <element signature="e#6383#6412#0" expanded="false" />
-                <element signature="n#!!block;n#initMonsterList2#0" expanded="false" />
-                <element signature="n#!!block;n#updateScoreText#0" expanded="false" />
-                <element signature="n#!!block;n#initScoreTextMesh#0" expanded="false" />
-                <element signature="n#!!block;n#createDeadBox#0" expanded="false" />
-                <element signature="n#!!block;n#createRedBox#0" expanded="false" />
-                <element signature="n#!!block;n#createBouncyRedSphere#0" expanded="false" />
-                <element signature="n#!!block;n#randN#0" expanded="false" />
-                <element signature="n#!!block;n#addBalls#0" expanded="false" />
-                <element signature="e#11993#13148#0" expanded="false" />
-                <element signature="n#!!block;n#playGameMusic#0" expanded="false" />
-                <element signature="n#!!block;n#soundEffect#0" expanded="false" />
-                <element signature="e#14131#14181#0" expanded="false" />
-                <element signature="n#!!block;n#initScene#0" expanded="false" />
-                <element signature="n#!!block;n#initPhysijs#0" expanded="false" />
-                <element signature="n#!!block;n#initRenderer#0" expanded="false" />
-                <element signature="n#!!block;n#createPointLight#0" expanded="false" />
-                <element signature="n#!!block;n#createBoxMesh#0" expanded="false" />
-                <element signature="n#!!block;n#createBoxMesh2#0" expanded="false" />
-                <element signature="n#!!block;n#createWall#0" expanded="false" />
-                <element signature="n#!!block;n#createGround#0" expanded="false" />
-                <element signature="n#!!block;n#createSkyBox#0" expanded="false" />
-                <element signature="n#!!block;n#createObjMtlModel#0" expanded="false" />
-                <element signature="e#18262#18268#0" expanded="false" />
-                <element signature="n#!!block;n#createGroup#0" expanded="false" />
-                <element signature="n#!!block;n#createOBJmodel#0" expanded="false" />
-                <element signature="n#!!block;n#initmonkeyAvatarJSON#0" expanded="false" />
-                <element signature="n#!!block;n#createConeMesh#0" expanded="false" />
-                <element signature="n#!!block;n#createBall#0" expanded="false" />
-                <element signature="n#!!block;n#createPLow#0" expanded="false" />
-                <element signature="n#!!block;n#initControls#0" expanded="false" />
-                <element signature="n#!!block;n#keyup#0" expanded="false" />
-                <element signature="n#!!block;n#updateNPC#0" expanded="false" />
-                <element signature="n#!!block;n#initLevel1OBJ#0" expanded="false" />
-                <element signature="n#!!block;n#updateAvatar#0" expanded="false" />
-                <element signature="n#!!block;n#updateSuzyOBJ#0" expanded="false" />
-                <element signature="n#!!block;n#updateFences#0" expanded="false" />
-                <element signature="n#!!block;n#animate#0" expanded="false" />
-                <marker date="1523313677933" expanded="true" signature="38766:38780" ph="..." />
+                <marker date="1523458175773" expanded="true" signature="38766:38780" ph="..." />
               </folding>
             </state>
           </provider>
@@ -110,7 +63,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>png</find>
       <find>init</find>
       <find>box</find>
       <find>scale</find>
@@ -137,9 +89,10 @@
       <find>genRandLoc</find>
       <find>score.*5</find>
       <find>avatar</find>
-      <find>avatar</find>
       <find>avatar.posi</find>
       <find>rotation</find>
+      <find>fence</find>
+      <find>colli</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -184,15 +137,14 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-247" />
-    <option name="y" value="-1052" />
-    <option name="width" value="1907" />
-    <option name="height" value="1050" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="809" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -205,41 +157,7 @@
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="PA02-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PA02-project" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PA02-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PA02-project" type="462c0819:PsiDirectoryNode" />
-              <item name="game" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PA02-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PA02-project" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PA02-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PA02-project" type="462c0819:PsiDirectoryNode" />
-              <item name="loaders" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PA02-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PA02-project" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -287,7 +205,10 @@
       <workItem from="1521648106962" duration="1180000" />
       <workItem from="1522599050384" duration="36236000" />
       <workItem from="1522674472704" duration="21025000" />
-      <workItem from="1523295421183" duration="11411000" />
+      <workItem from="1523295421183" duration="11857000" />
+      <workItem from="1523400259397" duration="1072000" />
+      <workItem from="1523455654136" duration="1325000" />
+      <workItem from="1523462166688" duration="219000" />
     </task>
     <task id="LOCAL-00001" summary="deal with some conflicts">
       <created>1521407588462</created>
@@ -314,19 +235,19 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94567000" />
+    <option name="totallyTimeSpent" value="97629000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-254" y="-1057" width="1920" height="1057" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="809" extended-state="6" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24947146" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292232" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32808024" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18430753" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32875264" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28470755" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32808024" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -382,53 +303,7 @@
         <state relative-caret-position="9500">
           <caret line="475" column="5" lean-forward="false" selection-start-line="472" selection-start-column="4" selection-end-line="475" selection-end-column="5" />
           <folding>
-            <element signature="n#!!block;n#createLoseScene#0" expanded="false" />
-            <element signature="n#!!block;n#createEndScene#0" expanded="false" />
-            <element signature="n#!!block;n#createStartScene#0" expanded="false" />
-            <element signature="n#!!block;n#initTextMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createStartText#0" expanded="false" />
-            <element signature="e#5632#5672#0" expanded="false" />
-            <element signature="e#5962#6004#0" expanded="false" />
-            <element signature="e#6252#6285#0" expanded="false" />
-            <element signature="e#6383#6412#0" expanded="false" />
-            <element signature="n#!!block;n#initMonsterList2#0" expanded="false" />
-            <element signature="n#!!block;n#updateScoreText#0" expanded="false" />
-            <element signature="n#!!block;n#initScoreTextMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createDeadBox#0" expanded="false" />
-            <element signature="n#!!block;n#createRedBox#0" expanded="false" />
-            <element signature="n#!!block;n#createBouncyRedSphere#0" expanded="false" />
-            <element signature="n#!!block;n#randN#0" expanded="false" />
-            <element signature="n#!!block;n#addBalls#0" expanded="false" />
-            <element signature="e#11993#13148#0" expanded="false" />
-            <element signature="n#!!block;n#playGameMusic#0" expanded="false" />
-            <element signature="n#!!block;n#soundEffect#0" expanded="false" />
-            <element signature="e#14131#14181#0" expanded="false" />
-            <element signature="n#!!block;n#initScene#0" expanded="false" />
-            <element signature="n#!!block;n#initPhysijs#0" expanded="false" />
-            <element signature="n#!!block;n#initRenderer#0" expanded="false" />
-            <element signature="n#!!block;n#createPointLight#0" expanded="false" />
-            <element signature="n#!!block;n#createBoxMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createBoxMesh2#0" expanded="false" />
-            <element signature="n#!!block;n#createWall#0" expanded="false" />
-            <element signature="n#!!block;n#createGround#0" expanded="false" />
-            <element signature="n#!!block;n#createSkyBox#0" expanded="false" />
-            <element signature="n#!!block;n#createObjMtlModel#0" expanded="false" />
-            <element signature="e#18262#18268#0" expanded="false" />
-            <element signature="n#!!block;n#createGroup#0" expanded="false" />
-            <element signature="n#!!block;n#createOBJmodel#0" expanded="false" />
-            <element signature="n#!!block;n#initmonkeyAvatarJSON#0" expanded="false" />
-            <element signature="n#!!block;n#createConeMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createBall#0" expanded="false" />
-            <element signature="n#!!block;n#createPLow#0" expanded="false" />
-            <element signature="n#!!block;n#initControls#0" expanded="false" />
-            <element signature="n#!!block;n#keyup#0" expanded="false" />
-            <element signature="n#!!block;n#updateNPC#0" expanded="false" />
-            <element signature="n#!!block;n#initLevel1OBJ#0" expanded="false" />
-            <element signature="n#!!block;n#updateAvatar#0" expanded="false" />
-            <element signature="n#!!block;n#updateSuzyOBJ#0" expanded="false" />
-            <element signature="n#!!block;n#updateFences#0" expanded="false" />
-            <element signature="n#!!block;n#animate#0" expanded="false" />
-            <marker date="1523313677933" expanded="true" signature="38766:38780" ph="..." />
+            <marker date="1523458175773" expanded="true" signature="38766:38780" ph="..." />
           </folding>
         </state>
       </provider>
@@ -445,53 +320,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#!!block;n#createLoseScene#0" expanded="false" />
-            <element signature="n#!!block;n#createEndScene#0" expanded="false" />
-            <element signature="n#!!block;n#createStartScene#0" expanded="false" />
-            <element signature="n#!!block;n#initTextMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createStartText#0" expanded="false" />
-            <element signature="e#5632#5672#0" expanded="false" />
-            <element signature="e#5962#6004#0" expanded="false" />
-            <element signature="e#6252#6285#0" expanded="false" />
-            <element signature="e#6383#6412#0" expanded="false" />
-            <element signature="n#!!block;n#initMonsterList2#0" expanded="false" />
-            <element signature="n#!!block;n#updateScoreText#0" expanded="false" />
-            <element signature="n#!!block;n#initScoreTextMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createDeadBox#0" expanded="false" />
-            <element signature="n#!!block;n#createRedBox#0" expanded="false" />
-            <element signature="n#!!block;n#createBouncyRedSphere#0" expanded="false" />
-            <element signature="n#!!block;n#randN#0" expanded="false" />
-            <element signature="n#!!block;n#addBalls#0" expanded="false" />
-            <element signature="e#11993#13148#0" expanded="false" />
-            <element signature="n#!!block;n#playGameMusic#0" expanded="false" />
-            <element signature="n#!!block;n#soundEffect#0" expanded="false" />
-            <element signature="e#14131#14181#0" expanded="false" />
-            <element signature="n#!!block;n#initScene#0" expanded="false" />
-            <element signature="n#!!block;n#initPhysijs#0" expanded="false" />
-            <element signature="n#!!block;n#initRenderer#0" expanded="false" />
-            <element signature="n#!!block;n#createPointLight#0" expanded="false" />
-            <element signature="n#!!block;n#createBoxMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createBoxMesh2#0" expanded="false" />
-            <element signature="n#!!block;n#createWall#0" expanded="false" />
-            <element signature="n#!!block;n#createGround#0" expanded="false" />
-            <element signature="n#!!block;n#createSkyBox#0" expanded="false" />
-            <element signature="n#!!block;n#createObjMtlModel#0" expanded="false" />
-            <element signature="e#18262#18268#0" expanded="false" />
-            <element signature="n#!!block;n#createGroup#0" expanded="false" />
-            <element signature="n#!!block;n#createOBJmodel#0" expanded="false" />
-            <element signature="n#!!block;n#initmonkeyAvatarJSON#0" expanded="false" />
-            <element signature="n#!!block;n#createConeMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createBall#0" expanded="false" />
-            <element signature="n#!!block;n#createPLow#0" expanded="false" />
-            <element signature="n#!!block;n#initControls#0" expanded="false" />
-            <element signature="n#!!block;n#keyup#0" expanded="false" />
-            <element signature="n#!!block;n#updateNPC#0" expanded="false" />
-            <element signature="n#!!block;n#initLevel1OBJ#0" expanded="false" />
-            <element signature="n#!!block;n#updateAvatar#0" expanded="false" />
-            <element signature="n#!!block;n#updateSuzyOBJ#0" expanded="false" />
-            <element signature="n#!!block;n#updateFences#0" expanded="false" />
-            <element signature="n#!!block;n#animate#0" expanded="false" />
-            <marker date="1523313677933" expanded="true" signature="38766:38780" ph="..." />
+            <marker date="1523458175773" expanded="true" signature="38766:38780" ph="..." />
           </folding>
         </state>
       </provider>
@@ -515,53 +344,7 @@
         <state relative-caret-position="199">
           <caret line="12" column="38" lean-forward="true" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
           <folding>
-            <element signature="n#!!block;n#createLoseScene#0" expanded="false" />
-            <element signature="n#!!block;n#createEndScene#0" expanded="false" />
-            <element signature="n#!!block;n#createStartScene#0" expanded="false" />
-            <element signature="n#!!block;n#initTextMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createStartText#0" expanded="false" />
-            <element signature="e#5632#5672#0" expanded="false" />
-            <element signature="e#5962#6004#0" expanded="false" />
-            <element signature="e#6252#6285#0" expanded="false" />
-            <element signature="e#6383#6412#0" expanded="false" />
-            <element signature="n#!!block;n#initMonsterList2#0" expanded="false" />
-            <element signature="n#!!block;n#updateScoreText#0" expanded="false" />
-            <element signature="n#!!block;n#initScoreTextMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createDeadBox#0" expanded="false" />
-            <element signature="n#!!block;n#createRedBox#0" expanded="false" />
-            <element signature="n#!!block;n#createBouncyRedSphere#0" expanded="false" />
-            <element signature="n#!!block;n#randN#0" expanded="false" />
-            <element signature="n#!!block;n#addBalls#0" expanded="false" />
-            <element signature="e#11993#13148#0" expanded="false" />
-            <element signature="n#!!block;n#playGameMusic#0" expanded="false" />
-            <element signature="n#!!block;n#soundEffect#0" expanded="false" />
-            <element signature="e#14131#14181#0" expanded="false" />
-            <element signature="n#!!block;n#initScene#0" expanded="false" />
-            <element signature="n#!!block;n#initPhysijs#0" expanded="false" />
-            <element signature="n#!!block;n#initRenderer#0" expanded="false" />
-            <element signature="n#!!block;n#createPointLight#0" expanded="false" />
-            <element signature="n#!!block;n#createBoxMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createBoxMesh2#0" expanded="false" />
-            <element signature="n#!!block;n#createWall#0" expanded="false" />
-            <element signature="n#!!block;n#createGround#0" expanded="false" />
-            <element signature="n#!!block;n#createSkyBox#0" expanded="false" />
-            <element signature="n#!!block;n#createObjMtlModel#0" expanded="false" />
-            <element signature="e#18262#18268#0" expanded="false" />
-            <element signature="n#!!block;n#createGroup#0" expanded="false" />
-            <element signature="n#!!block;n#createOBJmodel#0" expanded="false" />
-            <element signature="n#!!block;n#initmonkeyAvatarJSON#0" expanded="false" />
-            <element signature="n#!!block;n#createConeMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createBall#0" expanded="false" />
-            <element signature="n#!!block;n#createPLow#0" expanded="false" />
-            <element signature="n#!!block;n#initControls#0" expanded="false" />
-            <element signature="n#!!block;n#keyup#0" expanded="false" />
-            <element signature="n#!!block;n#updateNPC#0" expanded="false" />
-            <element signature="n#!!block;n#initLevel1OBJ#0" expanded="false" />
-            <element signature="n#!!block;n#updateAvatar#0" expanded="false" />
-            <element signature="n#!!block;n#updateSuzyOBJ#0" expanded="false" />
-            <element signature="n#!!block;n#updateFences#0" expanded="false" />
-            <element signature="n#!!block;n#animate#0" expanded="false" />
-            <marker date="1523313677933" expanded="true" signature="38766:38780" ph="..." />
+            <marker date="1523458175773" expanded="true" signature="38766:38780" ph="..." />
           </folding>
         </state>
       </provider>
@@ -592,53 +375,7 @@
         <state relative-caret-position="8000">
           <caret line="400" column="49" lean-forward="true" selection-start-line="400" selection-start-column="49" selection-end-line="400" selection-end-column="49" />
           <folding>
-            <element signature="n#!!block;n#createLoseScene#0" expanded="false" />
-            <element signature="n#!!block;n#createEndScene#0" expanded="false" />
-            <element signature="n#!!block;n#createStartScene#0" expanded="false" />
-            <element signature="n#!!block;n#initTextMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createStartText#0" expanded="false" />
-            <element signature="e#5632#5672#0" expanded="false" />
-            <element signature="e#5962#6004#0" expanded="false" />
-            <element signature="e#6252#6285#0" expanded="false" />
-            <element signature="e#6383#6412#0" expanded="false" />
-            <element signature="n#!!block;n#initMonsterList2#0" expanded="false" />
-            <element signature="n#!!block;n#updateScoreText#0" expanded="false" />
-            <element signature="n#!!block;n#initScoreTextMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createDeadBox#0" expanded="false" />
-            <element signature="n#!!block;n#createRedBox#0" expanded="false" />
-            <element signature="n#!!block;n#createBouncyRedSphere#0" expanded="false" />
-            <element signature="n#!!block;n#randN#0" expanded="false" />
-            <element signature="n#!!block;n#addBalls#0" expanded="false" />
-            <element signature="e#11993#13148#0" expanded="false" />
-            <element signature="n#!!block;n#playGameMusic#0" expanded="false" />
-            <element signature="n#!!block;n#soundEffect#0" expanded="false" />
-            <element signature="e#14131#14181#0" expanded="false" />
-            <element signature="n#!!block;n#initScene#0" expanded="false" />
-            <element signature="n#!!block;n#initPhysijs#0" expanded="false" />
-            <element signature="n#!!block;n#initRenderer#0" expanded="false" />
-            <element signature="n#!!block;n#createPointLight#0" expanded="false" />
-            <element signature="n#!!block;n#createBoxMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createBoxMesh2#0" expanded="false" />
-            <element signature="n#!!block;n#createWall#0" expanded="false" />
-            <element signature="n#!!block;n#createGround#0" expanded="false" />
-            <element signature="n#!!block;n#createSkyBox#0" expanded="false" />
-            <element signature="n#!!block;n#createObjMtlModel#0" expanded="false" />
-            <element signature="e#18262#18268#0" expanded="false" />
-            <element signature="n#!!block;n#createGroup#0" expanded="false" />
-            <element signature="n#!!block;n#createOBJmodel#0" expanded="false" />
-            <element signature="n#!!block;n#initmonkeyAvatarJSON#0" expanded="false" />
-            <element signature="n#!!block;n#createConeMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createBall#0" expanded="false" />
-            <element signature="n#!!block;n#createPLow#0" expanded="false" />
-            <element signature="n#!!block;n#initControls#0" expanded="false" />
-            <element signature="n#!!block;n#keyup#0" expanded="false" />
-            <element signature="n#!!block;n#updateNPC#0" expanded="false" />
-            <element signature="n#!!block;n#initLevel1OBJ#0" expanded="false" />
-            <element signature="n#!!block;n#updateAvatar#0" expanded="false" />
-            <element signature="n#!!block;n#updateSuzyOBJ#0" expanded="false" />
-            <element signature="n#!!block;n#updateFences#0" expanded="false" />
-            <element signature="n#!!block;n#animate#0" expanded="false" />
-            <marker date="1523313677933" expanded="true" signature="38766:38780" ph="..." />
+            <marker date="1523458175773" expanded="true" signature="38766:38780" ph="..." />
           </folding>
         </state>
       </provider>
@@ -648,53 +385,7 @@
         <state relative-caret-position="9500">
           <caret line="475" column="5" lean-forward="false" selection-start-line="472" selection-start-column="4" selection-end-line="475" selection-end-column="5" />
           <folding>
-            <element signature="n#!!block;n#createLoseScene#0" expanded="false" />
-            <element signature="n#!!block;n#createEndScene#0" expanded="false" />
-            <element signature="n#!!block;n#createStartScene#0" expanded="false" />
-            <element signature="n#!!block;n#initTextMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createStartText#0" expanded="false" />
-            <element signature="e#5632#5672#0" expanded="false" />
-            <element signature="e#5962#6004#0" expanded="false" />
-            <element signature="e#6252#6285#0" expanded="false" />
-            <element signature="e#6383#6412#0" expanded="false" />
-            <element signature="n#!!block;n#initMonsterList2#0" expanded="false" />
-            <element signature="n#!!block;n#updateScoreText#0" expanded="false" />
-            <element signature="n#!!block;n#initScoreTextMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createDeadBox#0" expanded="false" />
-            <element signature="n#!!block;n#createRedBox#0" expanded="false" />
-            <element signature="n#!!block;n#createBouncyRedSphere#0" expanded="false" />
-            <element signature="n#!!block;n#randN#0" expanded="false" />
-            <element signature="n#!!block;n#addBalls#0" expanded="false" />
-            <element signature="e#11993#13148#0" expanded="false" />
-            <element signature="n#!!block;n#playGameMusic#0" expanded="false" />
-            <element signature="n#!!block;n#soundEffect#0" expanded="false" />
-            <element signature="e#14131#14181#0" expanded="false" />
-            <element signature="n#!!block;n#initScene#0" expanded="false" />
-            <element signature="n#!!block;n#initPhysijs#0" expanded="false" />
-            <element signature="n#!!block;n#initRenderer#0" expanded="false" />
-            <element signature="n#!!block;n#createPointLight#0" expanded="false" />
-            <element signature="n#!!block;n#createBoxMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createBoxMesh2#0" expanded="false" />
-            <element signature="n#!!block;n#createWall#0" expanded="false" />
-            <element signature="n#!!block;n#createGround#0" expanded="false" />
-            <element signature="n#!!block;n#createSkyBox#0" expanded="false" />
-            <element signature="n#!!block;n#createObjMtlModel#0" expanded="false" />
-            <element signature="e#18262#18268#0" expanded="false" />
-            <element signature="n#!!block;n#createGroup#0" expanded="false" />
-            <element signature="n#!!block;n#createOBJmodel#0" expanded="false" />
-            <element signature="n#!!block;n#initmonkeyAvatarJSON#0" expanded="false" />
-            <element signature="n#!!block;n#createConeMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createBall#0" expanded="false" />
-            <element signature="n#!!block;n#createPLow#0" expanded="false" />
-            <element signature="n#!!block;n#initControls#0" expanded="false" />
-            <element signature="n#!!block;n#keyup#0" expanded="false" />
-            <element signature="n#!!block;n#updateNPC#0" expanded="false" />
-            <element signature="n#!!block;n#initLevel1OBJ#0" expanded="false" />
-            <element signature="n#!!block;n#updateAvatar#0" expanded="false" />
-            <element signature="n#!!block;n#updateSuzyOBJ#0" expanded="false" />
-            <element signature="n#!!block;n#updateFences#0" expanded="false" />
-            <element signature="n#!!block;n#animate#0" expanded="false" />
-            <marker date="1523313677933" expanded="true" signature="38766:38780" ph="..." />
+            <marker date="1523458175773" expanded="true" signature="38766:38780" ph="..." />
           </folding>
         </state>
       </provider>
@@ -711,53 +402,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#!!block;n#createLoseScene#0" expanded="false" />
-            <element signature="n#!!block;n#createEndScene#0" expanded="false" />
-            <element signature="n#!!block;n#createStartScene#0" expanded="false" />
-            <element signature="n#!!block;n#initTextMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createStartText#0" expanded="false" />
-            <element signature="e#5632#5672#0" expanded="false" />
-            <element signature="e#5962#6004#0" expanded="false" />
-            <element signature="e#6252#6285#0" expanded="false" />
-            <element signature="e#6383#6412#0" expanded="false" />
-            <element signature="n#!!block;n#initMonsterList2#0" expanded="false" />
-            <element signature="n#!!block;n#updateScoreText#0" expanded="false" />
-            <element signature="n#!!block;n#initScoreTextMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createDeadBox#0" expanded="false" />
-            <element signature="n#!!block;n#createRedBox#0" expanded="false" />
-            <element signature="n#!!block;n#createBouncyRedSphere#0" expanded="false" />
-            <element signature="n#!!block;n#randN#0" expanded="false" />
-            <element signature="n#!!block;n#addBalls#0" expanded="false" />
-            <element signature="e#11993#13148#0" expanded="false" />
-            <element signature="n#!!block;n#playGameMusic#0" expanded="false" />
-            <element signature="n#!!block;n#soundEffect#0" expanded="false" />
-            <element signature="e#14131#14181#0" expanded="false" />
-            <element signature="n#!!block;n#initScene#0" expanded="false" />
-            <element signature="n#!!block;n#initPhysijs#0" expanded="false" />
-            <element signature="n#!!block;n#initRenderer#0" expanded="false" />
-            <element signature="n#!!block;n#createPointLight#0" expanded="false" />
-            <element signature="n#!!block;n#createBoxMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createBoxMesh2#0" expanded="false" />
-            <element signature="n#!!block;n#createWall#0" expanded="false" />
-            <element signature="n#!!block;n#createGround#0" expanded="false" />
-            <element signature="n#!!block;n#createSkyBox#0" expanded="false" />
-            <element signature="n#!!block;n#createObjMtlModel#0" expanded="false" />
-            <element signature="e#18262#18268#0" expanded="false" />
-            <element signature="n#!!block;n#createGroup#0" expanded="false" />
-            <element signature="n#!!block;n#createOBJmodel#0" expanded="false" />
-            <element signature="n#!!block;n#initmonkeyAvatarJSON#0" expanded="false" />
-            <element signature="n#!!block;n#createConeMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createBall#0" expanded="false" />
-            <element signature="n#!!block;n#createPLow#0" expanded="false" />
-            <element signature="n#!!block;n#initControls#0" expanded="false" />
-            <element signature="n#!!block;n#keyup#0" expanded="false" />
-            <element signature="n#!!block;n#updateNPC#0" expanded="false" />
-            <element signature="n#!!block;n#initLevel1OBJ#0" expanded="false" />
-            <element signature="n#!!block;n#updateAvatar#0" expanded="false" />
-            <element signature="n#!!block;n#updateSuzyOBJ#0" expanded="false" />
-            <element signature="n#!!block;n#updateFences#0" expanded="false" />
-            <element signature="n#!!block;n#animate#0" expanded="false" />
-            <marker date="1523313677933" expanded="true" signature="38766:38780" ph="..." />
+            <marker date="1523458175773" expanded="true" signature="38766:38780" ph="..." />
           </folding>
         </state>
       </provider>
@@ -788,53 +433,7 @@
         <state relative-caret-position="5251">
           <caret line="519" column="62" lean-forward="false" selection-start-line="519" selection-start-column="62" selection-end-line="519" selection-end-column="62" />
           <folding>
-            <element signature="n#!!block;n#createLoseScene#0" expanded="false" />
-            <element signature="n#!!block;n#createEndScene#0" expanded="false" />
-            <element signature="n#!!block;n#createStartScene#0" expanded="false" />
-            <element signature="n#!!block;n#initTextMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createStartText#0" expanded="false" />
-            <element signature="e#5632#5672#0" expanded="false" />
-            <element signature="e#5962#6004#0" expanded="false" />
-            <element signature="e#6252#6285#0" expanded="false" />
-            <element signature="e#6383#6412#0" expanded="false" />
-            <element signature="n#!!block;n#initMonsterList2#0" expanded="false" />
-            <element signature="n#!!block;n#updateScoreText#0" expanded="false" />
-            <element signature="n#!!block;n#initScoreTextMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createDeadBox#0" expanded="false" />
-            <element signature="n#!!block;n#createRedBox#0" expanded="false" />
-            <element signature="n#!!block;n#createBouncyRedSphere#0" expanded="false" />
-            <element signature="n#!!block;n#randN#0" expanded="false" />
-            <element signature="n#!!block;n#addBalls#0" expanded="false" />
-            <element signature="e#11993#13148#0" expanded="false" />
-            <element signature="n#!!block;n#playGameMusic#0" expanded="false" />
-            <element signature="n#!!block;n#soundEffect#0" expanded="false" />
-            <element signature="e#14131#14181#0" expanded="false" />
-            <element signature="n#!!block;n#initScene#0" expanded="false" />
-            <element signature="n#!!block;n#initPhysijs#0" expanded="false" />
-            <element signature="n#!!block;n#initRenderer#0" expanded="false" />
-            <element signature="n#!!block;n#createPointLight#0" expanded="false" />
-            <element signature="n#!!block;n#createBoxMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createBoxMesh2#0" expanded="false" />
-            <element signature="n#!!block;n#createWall#0" expanded="false" />
-            <element signature="n#!!block;n#createGround#0" expanded="false" />
-            <element signature="n#!!block;n#createSkyBox#0" expanded="false" />
-            <element signature="n#!!block;n#createObjMtlModel#0" expanded="false" />
-            <element signature="e#18262#18268#0" expanded="false" />
-            <element signature="n#!!block;n#createGroup#0" expanded="false" />
-            <element signature="n#!!block;n#createOBJmodel#0" expanded="false" />
-            <element signature="n#!!block;n#initmonkeyAvatarJSON#0" expanded="false" />
-            <element signature="n#!!block;n#createConeMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createBall#0" expanded="false" />
-            <element signature="n#!!block;n#createPLow#0" expanded="false" />
-            <element signature="n#!!block;n#initControls#0" expanded="false" />
-            <element signature="n#!!block;n#keyup#0" expanded="false" />
-            <element signature="n#!!block;n#updateNPC#0" expanded="false" />
-            <element signature="n#!!block;n#initLevel1OBJ#0" expanded="false" />
-            <element signature="n#!!block;n#updateAvatar#0" expanded="false" />
-            <element signature="n#!!block;n#updateSuzyOBJ#0" expanded="false" />
-            <element signature="n#!!block;n#updateFences#0" expanded="false" />
-            <element signature="n#!!block;n#animate#0" expanded="false" />
-            <marker date="1523313677933" expanded="true" signature="38766:38780" ph="..." />
+            <marker date="1523458175773" expanded="true" signature="38766:38780" ph="..." />
           </folding>
         </state>
       </provider>
@@ -844,53 +443,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#!!block;n#createLoseScene#0" expanded="false" />
-            <element signature="n#!!block;n#createEndScene#0" expanded="false" />
-            <element signature="n#!!block;n#createStartScene#0" expanded="false" />
-            <element signature="n#!!block;n#initTextMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createStartText#0" expanded="false" />
-            <element signature="e#5632#5672#0" expanded="false" />
-            <element signature="e#5962#6004#0" expanded="false" />
-            <element signature="e#6252#6285#0" expanded="false" />
-            <element signature="e#6383#6412#0" expanded="false" />
-            <element signature="n#!!block;n#initMonsterList2#0" expanded="false" />
-            <element signature="n#!!block;n#updateScoreText#0" expanded="false" />
-            <element signature="n#!!block;n#initScoreTextMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createDeadBox#0" expanded="false" />
-            <element signature="n#!!block;n#createRedBox#0" expanded="false" />
-            <element signature="n#!!block;n#createBouncyRedSphere#0" expanded="false" />
-            <element signature="n#!!block;n#randN#0" expanded="false" />
-            <element signature="n#!!block;n#addBalls#0" expanded="false" />
-            <element signature="e#11993#13148#0" expanded="false" />
-            <element signature="n#!!block;n#playGameMusic#0" expanded="false" />
-            <element signature="n#!!block;n#soundEffect#0" expanded="false" />
-            <element signature="e#14131#14181#0" expanded="false" />
-            <element signature="n#!!block;n#initScene#0" expanded="false" />
-            <element signature="n#!!block;n#initPhysijs#0" expanded="false" />
-            <element signature="n#!!block;n#initRenderer#0" expanded="false" />
-            <element signature="n#!!block;n#createPointLight#0" expanded="false" />
-            <element signature="n#!!block;n#createBoxMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createBoxMesh2#0" expanded="false" />
-            <element signature="n#!!block;n#createWall#0" expanded="false" />
-            <element signature="n#!!block;n#createGround#0" expanded="false" />
-            <element signature="n#!!block;n#createSkyBox#0" expanded="false" />
-            <element signature="n#!!block;n#createObjMtlModel#0" expanded="false" />
-            <element signature="e#18262#18268#0" expanded="false" />
-            <element signature="n#!!block;n#createGroup#0" expanded="false" />
-            <element signature="n#!!block;n#createOBJmodel#0" expanded="false" />
-            <element signature="n#!!block;n#initmonkeyAvatarJSON#0" expanded="false" />
-            <element signature="n#!!block;n#createConeMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createBall#0" expanded="false" />
-            <element signature="n#!!block;n#createPLow#0" expanded="false" />
-            <element signature="n#!!block;n#initControls#0" expanded="false" />
-            <element signature="n#!!block;n#keyup#0" expanded="false" />
-            <element signature="n#!!block;n#updateNPC#0" expanded="false" />
-            <element signature="n#!!block;n#initLevel1OBJ#0" expanded="false" />
-            <element signature="n#!!block;n#updateAvatar#0" expanded="false" />
-            <element signature="n#!!block;n#updateSuzyOBJ#0" expanded="false" />
-            <element signature="n#!!block;n#updateFences#0" expanded="false" />
-            <element signature="n#!!block;n#animate#0" expanded="false" />
-            <marker date="1523313677933" expanded="true" signature="38766:38780" ph="..." />
+            <marker date="1523458175773" expanded="true" signature="38766:38780" ph="..." />
           </folding>
         </state>
       </provider>
@@ -907,53 +460,7 @@
         <state relative-caret-position="240">
           <caret line="12" column="63" lean-forward="true" selection-start-line="12" selection-start-column="63" selection-end-line="12" selection-end-column="63" />
           <folding>
-            <element signature="n#!!block;n#createLoseScene#0" expanded="false" />
-            <element signature="n#!!block;n#createEndScene#0" expanded="false" />
-            <element signature="n#!!block;n#createStartScene#0" expanded="false" />
-            <element signature="n#!!block;n#initTextMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createStartText#0" expanded="false" />
-            <element signature="e#5632#5672#0" expanded="false" />
-            <element signature="e#5962#6004#0" expanded="false" />
-            <element signature="e#6252#6285#0" expanded="false" />
-            <element signature="e#6383#6412#0" expanded="false" />
-            <element signature="n#!!block;n#initMonsterList2#0" expanded="false" />
-            <element signature="n#!!block;n#updateScoreText#0" expanded="false" />
-            <element signature="n#!!block;n#initScoreTextMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createDeadBox#0" expanded="false" />
-            <element signature="n#!!block;n#createRedBox#0" expanded="false" />
-            <element signature="n#!!block;n#createBouncyRedSphere#0" expanded="false" />
-            <element signature="n#!!block;n#randN#0" expanded="false" />
-            <element signature="n#!!block;n#addBalls#0" expanded="false" />
-            <element signature="e#11993#13148#0" expanded="false" />
-            <element signature="n#!!block;n#playGameMusic#0" expanded="false" />
-            <element signature="n#!!block;n#soundEffect#0" expanded="false" />
-            <element signature="e#14131#14181#0" expanded="false" />
-            <element signature="n#!!block;n#initScene#0" expanded="false" />
-            <element signature="n#!!block;n#initPhysijs#0" expanded="false" />
-            <element signature="n#!!block;n#initRenderer#0" expanded="false" />
-            <element signature="n#!!block;n#createPointLight#0" expanded="false" />
-            <element signature="n#!!block;n#createBoxMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createBoxMesh2#0" expanded="false" />
-            <element signature="n#!!block;n#createWall#0" expanded="false" />
-            <element signature="n#!!block;n#createGround#0" expanded="false" />
-            <element signature="n#!!block;n#createSkyBox#0" expanded="false" />
-            <element signature="n#!!block;n#createObjMtlModel#0" expanded="false" />
-            <element signature="e#18262#18268#0" expanded="false" />
-            <element signature="n#!!block;n#createGroup#0" expanded="false" />
-            <element signature="n#!!block;n#createOBJmodel#0" expanded="false" />
-            <element signature="n#!!block;n#initmonkeyAvatarJSON#0" expanded="false" />
-            <element signature="n#!!block;n#createConeMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createBall#0" expanded="false" />
-            <element signature="n#!!block;n#createPLow#0" expanded="false" />
-            <element signature="n#!!block;n#initControls#0" expanded="false" />
-            <element signature="n#!!block;n#keyup#0" expanded="false" />
-            <element signature="n#!!block;n#updateNPC#0" expanded="false" />
-            <element signature="n#!!block;n#initLevel1OBJ#0" expanded="false" />
-            <element signature="n#!!block;n#updateAvatar#0" expanded="false" />
-            <element signature="n#!!block;n#updateSuzyOBJ#0" expanded="false" />
-            <element signature="n#!!block;n#updateFences#0" expanded="false" />
-            <element signature="n#!!block;n#animate#0" expanded="false" />
-            <marker date="1523313677933" expanded="true" signature="38766:38780" ph="..." />
+            <marker date="1523458175773" expanded="true" signature="38766:38780" ph="..." />
           </folding>
         </state>
       </provider>
@@ -977,53 +484,7 @@
         <state relative-caret-position="740">
           <caret line="37" column="9" lean-forward="false" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
           <folding>
-            <element signature="n#!!block;n#createLoseScene#0" expanded="false" />
-            <element signature="n#!!block;n#createEndScene#0" expanded="false" />
-            <element signature="n#!!block;n#createStartScene#0" expanded="false" />
-            <element signature="n#!!block;n#initTextMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createStartText#0" expanded="false" />
-            <element signature="e#5632#5672#0" expanded="false" />
-            <element signature="e#5962#6004#0" expanded="false" />
-            <element signature="e#6252#6285#0" expanded="false" />
-            <element signature="e#6383#6412#0" expanded="false" />
-            <element signature="n#!!block;n#initMonsterList2#0" expanded="false" />
-            <element signature="n#!!block;n#updateScoreText#0" expanded="false" />
-            <element signature="n#!!block;n#initScoreTextMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createDeadBox#0" expanded="false" />
-            <element signature="n#!!block;n#createRedBox#0" expanded="false" />
-            <element signature="n#!!block;n#createBouncyRedSphere#0" expanded="false" />
-            <element signature="n#!!block;n#randN#0" expanded="false" />
-            <element signature="n#!!block;n#addBalls#0" expanded="false" />
-            <element signature="e#11993#13148#0" expanded="false" />
-            <element signature="n#!!block;n#playGameMusic#0" expanded="false" />
-            <element signature="n#!!block;n#soundEffect#0" expanded="false" />
-            <element signature="e#14131#14181#0" expanded="false" />
-            <element signature="n#!!block;n#initScene#0" expanded="false" />
-            <element signature="n#!!block;n#initPhysijs#0" expanded="false" />
-            <element signature="n#!!block;n#initRenderer#0" expanded="false" />
-            <element signature="n#!!block;n#createPointLight#0" expanded="false" />
-            <element signature="n#!!block;n#createBoxMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createBoxMesh2#0" expanded="false" />
-            <element signature="n#!!block;n#createWall#0" expanded="false" />
-            <element signature="n#!!block;n#createGround#0" expanded="false" />
-            <element signature="n#!!block;n#createSkyBox#0" expanded="false" />
-            <element signature="n#!!block;n#createObjMtlModel#0" expanded="false" />
-            <element signature="e#18262#18268#0" expanded="false" />
-            <element signature="n#!!block;n#createGroup#0" expanded="false" />
-            <element signature="n#!!block;n#createOBJmodel#0" expanded="false" />
-            <element signature="n#!!block;n#initmonkeyAvatarJSON#0" expanded="false" />
-            <element signature="n#!!block;n#createConeMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createBall#0" expanded="false" />
-            <element signature="n#!!block;n#createPLow#0" expanded="false" />
-            <element signature="n#!!block;n#initControls#0" expanded="false" />
-            <element signature="n#!!block;n#keyup#0" expanded="false" />
-            <element signature="n#!!block;n#updateNPC#0" expanded="false" />
-            <element signature="n#!!block;n#initLevel1OBJ#0" expanded="false" />
-            <element signature="n#!!block;n#updateAvatar#0" expanded="false" />
-            <element signature="n#!!block;n#updateSuzyOBJ#0" expanded="false" />
-            <element signature="n#!!block;n#updateFences#0" expanded="false" />
-            <element signature="n#!!block;n#animate#0" expanded="false" />
-            <marker date="1523313677933" expanded="true" signature="38766:38780" ph="..." />
+            <marker date="1523458175773" expanded="true" signature="38766:38780" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1040,53 +501,7 @@
         <state relative-caret-position="8000">
           <caret line="400" column="49" lean-forward="true" selection-start-line="400" selection-start-column="49" selection-end-line="400" selection-end-column="49" />
           <folding>
-            <element signature="n#!!block;n#createLoseScene#0" expanded="false" />
-            <element signature="n#!!block;n#createEndScene#0" expanded="false" />
-            <element signature="n#!!block;n#createStartScene#0" expanded="false" />
-            <element signature="n#!!block;n#initTextMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createStartText#0" expanded="false" />
-            <element signature="e#5632#5672#0" expanded="false" />
-            <element signature="e#5962#6004#0" expanded="false" />
-            <element signature="e#6252#6285#0" expanded="false" />
-            <element signature="e#6383#6412#0" expanded="false" />
-            <element signature="n#!!block;n#initMonsterList2#0" expanded="false" />
-            <element signature="n#!!block;n#updateScoreText#0" expanded="false" />
-            <element signature="n#!!block;n#initScoreTextMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createDeadBox#0" expanded="false" />
-            <element signature="n#!!block;n#createRedBox#0" expanded="false" />
-            <element signature="n#!!block;n#createBouncyRedSphere#0" expanded="false" />
-            <element signature="n#!!block;n#randN#0" expanded="false" />
-            <element signature="n#!!block;n#addBalls#0" expanded="false" />
-            <element signature="e#11993#13148#0" expanded="false" />
-            <element signature="n#!!block;n#playGameMusic#0" expanded="false" />
-            <element signature="n#!!block;n#soundEffect#0" expanded="false" />
-            <element signature="e#14131#14181#0" expanded="false" />
-            <element signature="n#!!block;n#initScene#0" expanded="false" />
-            <element signature="n#!!block;n#initPhysijs#0" expanded="false" />
-            <element signature="n#!!block;n#initRenderer#0" expanded="false" />
-            <element signature="n#!!block;n#createPointLight#0" expanded="false" />
-            <element signature="n#!!block;n#createBoxMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createBoxMesh2#0" expanded="false" />
-            <element signature="n#!!block;n#createWall#0" expanded="false" />
-            <element signature="n#!!block;n#createGround#0" expanded="false" />
-            <element signature="n#!!block;n#createSkyBox#0" expanded="false" />
-            <element signature="n#!!block;n#createObjMtlModel#0" expanded="false" />
-            <element signature="e#18262#18268#0" expanded="false" />
-            <element signature="n#!!block;n#createGroup#0" expanded="false" />
-            <element signature="n#!!block;n#createOBJmodel#0" expanded="false" />
-            <element signature="n#!!block;n#initmonkeyAvatarJSON#0" expanded="false" />
-            <element signature="n#!!block;n#createConeMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createBall#0" expanded="false" />
-            <element signature="n#!!block;n#createPLow#0" expanded="false" />
-            <element signature="n#!!block;n#initControls#0" expanded="false" />
-            <element signature="n#!!block;n#keyup#0" expanded="false" />
-            <element signature="n#!!block;n#updateNPC#0" expanded="false" />
-            <element signature="n#!!block;n#initLevel1OBJ#0" expanded="false" />
-            <element signature="n#!!block;n#updateAvatar#0" expanded="false" />
-            <element signature="n#!!block;n#updateSuzyOBJ#0" expanded="false" />
-            <element signature="n#!!block;n#updateFences#0" expanded="false" />
-            <element signature="n#!!block;n#animate#0" expanded="false" />
-            <marker date="1523313677933" expanded="true" signature="38766:38780" ph="..." />
+            <marker date="1523458175773" expanded="true" signature="38766:38780" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1096,53 +511,7 @@
         <state relative-caret-position="9500">
           <caret line="475" column="5" lean-forward="false" selection-start-line="472" selection-start-column="4" selection-end-line="475" selection-end-column="5" />
           <folding>
-            <element signature="n#!!block;n#createLoseScene#0" expanded="false" />
-            <element signature="n#!!block;n#createEndScene#0" expanded="false" />
-            <element signature="n#!!block;n#createStartScene#0" expanded="false" />
-            <element signature="n#!!block;n#initTextMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createStartText#0" expanded="false" />
-            <element signature="e#5632#5672#0" expanded="false" />
-            <element signature="e#5962#6004#0" expanded="false" />
-            <element signature="e#6252#6285#0" expanded="false" />
-            <element signature="e#6383#6412#0" expanded="false" />
-            <element signature="n#!!block;n#initMonsterList2#0" expanded="false" />
-            <element signature="n#!!block;n#updateScoreText#0" expanded="false" />
-            <element signature="n#!!block;n#initScoreTextMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createDeadBox#0" expanded="false" />
-            <element signature="n#!!block;n#createRedBox#0" expanded="false" />
-            <element signature="n#!!block;n#createBouncyRedSphere#0" expanded="false" />
-            <element signature="n#!!block;n#randN#0" expanded="false" />
-            <element signature="n#!!block;n#addBalls#0" expanded="false" />
-            <element signature="e#11993#13148#0" expanded="false" />
-            <element signature="n#!!block;n#playGameMusic#0" expanded="false" />
-            <element signature="n#!!block;n#soundEffect#0" expanded="false" />
-            <element signature="e#14131#14181#0" expanded="false" />
-            <element signature="n#!!block;n#initScene#0" expanded="false" />
-            <element signature="n#!!block;n#initPhysijs#0" expanded="false" />
-            <element signature="n#!!block;n#initRenderer#0" expanded="false" />
-            <element signature="n#!!block;n#createPointLight#0" expanded="false" />
-            <element signature="n#!!block;n#createBoxMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createBoxMesh2#0" expanded="false" />
-            <element signature="n#!!block;n#createWall#0" expanded="false" />
-            <element signature="n#!!block;n#createGround#0" expanded="false" />
-            <element signature="n#!!block;n#createSkyBox#0" expanded="false" />
-            <element signature="n#!!block;n#createObjMtlModel#0" expanded="false" />
-            <element signature="e#18262#18268#0" expanded="false" />
-            <element signature="n#!!block;n#createGroup#0" expanded="false" />
-            <element signature="n#!!block;n#createOBJmodel#0" expanded="false" />
-            <element signature="n#!!block;n#initmonkeyAvatarJSON#0" expanded="false" />
-            <element signature="n#!!block;n#createConeMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createBall#0" expanded="false" />
-            <element signature="n#!!block;n#createPLow#0" expanded="false" />
-            <element signature="n#!!block;n#initControls#0" expanded="false" />
-            <element signature="n#!!block;n#keyup#0" expanded="false" />
-            <element signature="n#!!block;n#updateNPC#0" expanded="false" />
-            <element signature="n#!!block;n#initLevel1OBJ#0" expanded="false" />
-            <element signature="n#!!block;n#updateAvatar#0" expanded="false" />
-            <element signature="n#!!block;n#updateSuzyOBJ#0" expanded="false" />
-            <element signature="n#!!block;n#updateFences#0" expanded="false" />
-            <element signature="n#!!block;n#animate#0" expanded="false" />
-            <marker date="1523313677933" expanded="true" signature="38766:38780" ph="..." />
+            <marker date="1523458175773" expanded="true" signature="38766:38780" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1159,53 +528,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#!!block;n#createLoseScene#0" expanded="false" />
-            <element signature="n#!!block;n#createEndScene#0" expanded="false" />
-            <element signature="n#!!block;n#createStartScene#0" expanded="false" />
-            <element signature="n#!!block;n#initTextMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createStartText#0" expanded="false" />
-            <element signature="e#5632#5672#0" expanded="false" />
-            <element signature="e#5962#6004#0" expanded="false" />
-            <element signature="e#6252#6285#0" expanded="false" />
-            <element signature="e#6383#6412#0" expanded="false" />
-            <element signature="n#!!block;n#initMonsterList2#0" expanded="false" />
-            <element signature="n#!!block;n#updateScoreText#0" expanded="false" />
-            <element signature="n#!!block;n#initScoreTextMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createDeadBox#0" expanded="false" />
-            <element signature="n#!!block;n#createRedBox#0" expanded="false" />
-            <element signature="n#!!block;n#createBouncyRedSphere#0" expanded="false" />
-            <element signature="n#!!block;n#randN#0" expanded="false" />
-            <element signature="n#!!block;n#addBalls#0" expanded="false" />
-            <element signature="e#11993#13148#0" expanded="false" />
-            <element signature="n#!!block;n#playGameMusic#0" expanded="false" />
-            <element signature="n#!!block;n#soundEffect#0" expanded="false" />
-            <element signature="e#14131#14181#0" expanded="false" />
-            <element signature="n#!!block;n#initScene#0" expanded="false" />
-            <element signature="n#!!block;n#initPhysijs#0" expanded="false" />
-            <element signature="n#!!block;n#initRenderer#0" expanded="false" />
-            <element signature="n#!!block;n#createPointLight#0" expanded="false" />
-            <element signature="n#!!block;n#createBoxMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createBoxMesh2#0" expanded="false" />
-            <element signature="n#!!block;n#createWall#0" expanded="false" />
-            <element signature="n#!!block;n#createGround#0" expanded="false" />
-            <element signature="n#!!block;n#createSkyBox#0" expanded="false" />
-            <element signature="n#!!block;n#createObjMtlModel#0" expanded="false" />
-            <element signature="e#18262#18268#0" expanded="false" />
-            <element signature="n#!!block;n#createGroup#0" expanded="false" />
-            <element signature="n#!!block;n#createOBJmodel#0" expanded="false" />
-            <element signature="n#!!block;n#initmonkeyAvatarJSON#0" expanded="false" />
-            <element signature="n#!!block;n#createConeMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createBall#0" expanded="false" />
-            <element signature="n#!!block;n#createPLow#0" expanded="false" />
-            <element signature="n#!!block;n#initControls#0" expanded="false" />
-            <element signature="n#!!block;n#keyup#0" expanded="false" />
-            <element signature="n#!!block;n#updateNPC#0" expanded="false" />
-            <element signature="n#!!block;n#initLevel1OBJ#0" expanded="false" />
-            <element signature="n#!!block;n#updateAvatar#0" expanded="false" />
-            <element signature="n#!!block;n#updateSuzyOBJ#0" expanded="false" />
-            <element signature="n#!!block;n#updateFences#0" expanded="false" />
-            <element signature="n#!!block;n#animate#0" expanded="false" />
-            <marker date="1523313677933" expanded="true" signature="38766:38780" ph="..." />
+            <marker date="1523458175773" expanded="true" signature="38766:38780" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1229,53 +552,7 @@
         <state relative-caret-position="199">
           <caret line="12" column="38" lean-forward="true" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
           <folding>
-            <element signature="n#!!block;n#createLoseScene#0" expanded="false" />
-            <element signature="n#!!block;n#createEndScene#0" expanded="false" />
-            <element signature="n#!!block;n#createStartScene#0" expanded="false" />
-            <element signature="n#!!block;n#initTextMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createStartText#0" expanded="false" />
-            <element signature="e#5632#5672#0" expanded="false" />
-            <element signature="e#5962#6004#0" expanded="false" />
-            <element signature="e#6252#6285#0" expanded="false" />
-            <element signature="e#6383#6412#0" expanded="false" />
-            <element signature="n#!!block;n#initMonsterList2#0" expanded="false" />
-            <element signature="n#!!block;n#updateScoreText#0" expanded="false" />
-            <element signature="n#!!block;n#initScoreTextMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createDeadBox#0" expanded="false" />
-            <element signature="n#!!block;n#createRedBox#0" expanded="false" />
-            <element signature="n#!!block;n#createBouncyRedSphere#0" expanded="false" />
-            <element signature="n#!!block;n#randN#0" expanded="false" />
-            <element signature="n#!!block;n#addBalls#0" expanded="false" />
-            <element signature="e#11993#13148#0" expanded="false" />
-            <element signature="n#!!block;n#playGameMusic#0" expanded="false" />
-            <element signature="n#!!block;n#soundEffect#0" expanded="false" />
-            <element signature="e#14131#14181#0" expanded="false" />
-            <element signature="n#!!block;n#initScene#0" expanded="false" />
-            <element signature="n#!!block;n#initPhysijs#0" expanded="false" />
-            <element signature="n#!!block;n#initRenderer#0" expanded="false" />
-            <element signature="n#!!block;n#createPointLight#0" expanded="false" />
-            <element signature="n#!!block;n#createBoxMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createBoxMesh2#0" expanded="false" />
-            <element signature="n#!!block;n#createWall#0" expanded="false" />
-            <element signature="n#!!block;n#createGround#0" expanded="false" />
-            <element signature="n#!!block;n#createSkyBox#0" expanded="false" />
-            <element signature="n#!!block;n#createObjMtlModel#0" expanded="false" />
-            <element signature="e#18262#18268#0" expanded="false" />
-            <element signature="n#!!block;n#createGroup#0" expanded="false" />
-            <element signature="n#!!block;n#createOBJmodel#0" expanded="false" />
-            <element signature="n#!!block;n#initmonkeyAvatarJSON#0" expanded="false" />
-            <element signature="n#!!block;n#createConeMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createBall#0" expanded="false" />
-            <element signature="n#!!block;n#createPLow#0" expanded="false" />
-            <element signature="n#!!block;n#initControls#0" expanded="false" />
-            <element signature="n#!!block;n#keyup#0" expanded="false" />
-            <element signature="n#!!block;n#updateNPC#0" expanded="false" />
-            <element signature="n#!!block;n#initLevel1OBJ#0" expanded="false" />
-            <element signature="n#!!block;n#updateAvatar#0" expanded="false" />
-            <element signature="n#!!block;n#updateSuzyOBJ#0" expanded="false" />
-            <element signature="n#!!block;n#updateFences#0" expanded="false" />
-            <element signature="n#!!block;n#animate#0" expanded="false" />
-            <marker date="1523313677933" expanded="true" signature="38766:38780" ph="..." />
+            <marker date="1523458175773" expanded="true" signature="38766:38780" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1306,53 +583,7 @@
         <state relative-caret-position="8000">
           <caret line="400" column="49" lean-forward="true" selection-start-line="400" selection-start-column="49" selection-end-line="400" selection-end-column="49" />
           <folding>
-            <element signature="n#!!block;n#createLoseScene#0" expanded="false" />
-            <element signature="n#!!block;n#createEndScene#0" expanded="false" />
-            <element signature="n#!!block;n#createStartScene#0" expanded="false" />
-            <element signature="n#!!block;n#initTextMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createStartText#0" expanded="false" />
-            <element signature="e#5632#5672#0" expanded="false" />
-            <element signature="e#5962#6004#0" expanded="false" />
-            <element signature="e#6252#6285#0" expanded="false" />
-            <element signature="e#6383#6412#0" expanded="false" />
-            <element signature="n#!!block;n#initMonsterList2#0" expanded="false" />
-            <element signature="n#!!block;n#updateScoreText#0" expanded="false" />
-            <element signature="n#!!block;n#initScoreTextMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createDeadBox#0" expanded="false" />
-            <element signature="n#!!block;n#createRedBox#0" expanded="false" />
-            <element signature="n#!!block;n#createBouncyRedSphere#0" expanded="false" />
-            <element signature="n#!!block;n#randN#0" expanded="false" />
-            <element signature="n#!!block;n#addBalls#0" expanded="false" />
-            <element signature="e#11993#13148#0" expanded="false" />
-            <element signature="n#!!block;n#playGameMusic#0" expanded="false" />
-            <element signature="n#!!block;n#soundEffect#0" expanded="false" />
-            <element signature="e#14131#14181#0" expanded="false" />
-            <element signature="n#!!block;n#initScene#0" expanded="false" />
-            <element signature="n#!!block;n#initPhysijs#0" expanded="false" />
-            <element signature="n#!!block;n#initRenderer#0" expanded="false" />
-            <element signature="n#!!block;n#createPointLight#0" expanded="false" />
-            <element signature="n#!!block;n#createBoxMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createBoxMesh2#0" expanded="false" />
-            <element signature="n#!!block;n#createWall#0" expanded="false" />
-            <element signature="n#!!block;n#createGround#0" expanded="false" />
-            <element signature="n#!!block;n#createSkyBox#0" expanded="false" />
-            <element signature="n#!!block;n#createObjMtlModel#0" expanded="false" />
-            <element signature="e#18262#18268#0" expanded="false" />
-            <element signature="n#!!block;n#createGroup#0" expanded="false" />
-            <element signature="n#!!block;n#createOBJmodel#0" expanded="false" />
-            <element signature="n#!!block;n#initmonkeyAvatarJSON#0" expanded="false" />
-            <element signature="n#!!block;n#createConeMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createBall#0" expanded="false" />
-            <element signature="n#!!block;n#createPLow#0" expanded="false" />
-            <element signature="n#!!block;n#initControls#0" expanded="false" />
-            <element signature="n#!!block;n#keyup#0" expanded="false" />
-            <element signature="n#!!block;n#updateNPC#0" expanded="false" />
-            <element signature="n#!!block;n#initLevel1OBJ#0" expanded="false" />
-            <element signature="n#!!block;n#updateAvatar#0" expanded="false" />
-            <element signature="n#!!block;n#updateSuzyOBJ#0" expanded="false" />
-            <element signature="n#!!block;n#updateFences#0" expanded="false" />
-            <element signature="n#!!block;n#animate#0" expanded="false" />
-            <marker date="1523313677933" expanded="true" signature="38766:38780" ph="..." />
+            <marker date="1523458175773" expanded="true" signature="38766:38780" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1362,53 +593,7 @@
         <state relative-caret-position="9500">
           <caret line="475" column="5" lean-forward="false" selection-start-line="472" selection-start-column="4" selection-end-line="475" selection-end-column="5" />
           <folding>
-            <element signature="n#!!block;n#createLoseScene#0" expanded="false" />
-            <element signature="n#!!block;n#createEndScene#0" expanded="false" />
-            <element signature="n#!!block;n#createStartScene#0" expanded="false" />
-            <element signature="n#!!block;n#initTextMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createStartText#0" expanded="false" />
-            <element signature="e#5632#5672#0" expanded="false" />
-            <element signature="e#5962#6004#0" expanded="false" />
-            <element signature="e#6252#6285#0" expanded="false" />
-            <element signature="e#6383#6412#0" expanded="false" />
-            <element signature="n#!!block;n#initMonsterList2#0" expanded="false" />
-            <element signature="n#!!block;n#updateScoreText#0" expanded="false" />
-            <element signature="n#!!block;n#initScoreTextMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createDeadBox#0" expanded="false" />
-            <element signature="n#!!block;n#createRedBox#0" expanded="false" />
-            <element signature="n#!!block;n#createBouncyRedSphere#0" expanded="false" />
-            <element signature="n#!!block;n#randN#0" expanded="false" />
-            <element signature="n#!!block;n#addBalls#0" expanded="false" />
-            <element signature="e#11993#13148#0" expanded="false" />
-            <element signature="n#!!block;n#playGameMusic#0" expanded="false" />
-            <element signature="n#!!block;n#soundEffect#0" expanded="false" />
-            <element signature="e#14131#14181#0" expanded="false" />
-            <element signature="n#!!block;n#initScene#0" expanded="false" />
-            <element signature="n#!!block;n#initPhysijs#0" expanded="false" />
-            <element signature="n#!!block;n#initRenderer#0" expanded="false" />
-            <element signature="n#!!block;n#createPointLight#0" expanded="false" />
-            <element signature="n#!!block;n#createBoxMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createBoxMesh2#0" expanded="false" />
-            <element signature="n#!!block;n#createWall#0" expanded="false" />
-            <element signature="n#!!block;n#createGround#0" expanded="false" />
-            <element signature="n#!!block;n#createSkyBox#0" expanded="false" />
-            <element signature="n#!!block;n#createObjMtlModel#0" expanded="false" />
-            <element signature="e#18262#18268#0" expanded="false" />
-            <element signature="n#!!block;n#createGroup#0" expanded="false" />
-            <element signature="n#!!block;n#createOBJmodel#0" expanded="false" />
-            <element signature="n#!!block;n#initmonkeyAvatarJSON#0" expanded="false" />
-            <element signature="n#!!block;n#createConeMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createBall#0" expanded="false" />
-            <element signature="n#!!block;n#createPLow#0" expanded="false" />
-            <element signature="n#!!block;n#initControls#0" expanded="false" />
-            <element signature="n#!!block;n#keyup#0" expanded="false" />
-            <element signature="n#!!block;n#updateNPC#0" expanded="false" />
-            <element signature="n#!!block;n#initLevel1OBJ#0" expanded="false" />
-            <element signature="n#!!block;n#updateAvatar#0" expanded="false" />
-            <element signature="n#!!block;n#updateSuzyOBJ#0" expanded="false" />
-            <element signature="n#!!block;n#updateFences#0" expanded="false" />
-            <element signature="n#!!block;n#animate#0" expanded="false" />
-            <marker date="1523313677933" expanded="true" signature="38766:38780" ph="..." />
+            <marker date="1523458175773" expanded="true" signature="38766:38780" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1425,53 +610,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#!!block;n#createLoseScene#0" expanded="false" />
-            <element signature="n#!!block;n#createEndScene#0" expanded="false" />
-            <element signature="n#!!block;n#createStartScene#0" expanded="false" />
-            <element signature="n#!!block;n#initTextMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createStartText#0" expanded="false" />
-            <element signature="e#5632#5672#0" expanded="false" />
-            <element signature="e#5962#6004#0" expanded="false" />
-            <element signature="e#6252#6285#0" expanded="false" />
-            <element signature="e#6383#6412#0" expanded="false" />
-            <element signature="n#!!block;n#initMonsterList2#0" expanded="false" />
-            <element signature="n#!!block;n#updateScoreText#0" expanded="false" />
-            <element signature="n#!!block;n#initScoreTextMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createDeadBox#0" expanded="false" />
-            <element signature="n#!!block;n#createRedBox#0" expanded="false" />
-            <element signature="n#!!block;n#createBouncyRedSphere#0" expanded="false" />
-            <element signature="n#!!block;n#randN#0" expanded="false" />
-            <element signature="n#!!block;n#addBalls#0" expanded="false" />
-            <element signature="e#11993#13148#0" expanded="false" />
-            <element signature="n#!!block;n#playGameMusic#0" expanded="false" />
-            <element signature="n#!!block;n#soundEffect#0" expanded="false" />
-            <element signature="e#14131#14181#0" expanded="false" />
-            <element signature="n#!!block;n#initScene#0" expanded="false" />
-            <element signature="n#!!block;n#initPhysijs#0" expanded="false" />
-            <element signature="n#!!block;n#initRenderer#0" expanded="false" />
-            <element signature="n#!!block;n#createPointLight#0" expanded="false" />
-            <element signature="n#!!block;n#createBoxMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createBoxMesh2#0" expanded="false" />
-            <element signature="n#!!block;n#createWall#0" expanded="false" />
-            <element signature="n#!!block;n#createGround#0" expanded="false" />
-            <element signature="n#!!block;n#createSkyBox#0" expanded="false" />
-            <element signature="n#!!block;n#createObjMtlModel#0" expanded="false" />
-            <element signature="e#18262#18268#0" expanded="false" />
-            <element signature="n#!!block;n#createGroup#0" expanded="false" />
-            <element signature="n#!!block;n#createOBJmodel#0" expanded="false" />
-            <element signature="n#!!block;n#initmonkeyAvatarJSON#0" expanded="false" />
-            <element signature="n#!!block;n#createConeMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createBall#0" expanded="false" />
-            <element signature="n#!!block;n#createPLow#0" expanded="false" />
-            <element signature="n#!!block;n#initControls#0" expanded="false" />
-            <element signature="n#!!block;n#keyup#0" expanded="false" />
-            <element signature="n#!!block;n#updateNPC#0" expanded="false" />
-            <element signature="n#!!block;n#initLevel1OBJ#0" expanded="false" />
-            <element signature="n#!!block;n#updateAvatar#0" expanded="false" />
-            <element signature="n#!!block;n#updateSuzyOBJ#0" expanded="false" />
-            <element signature="n#!!block;n#updateFences#0" expanded="false" />
-            <element signature="n#!!block;n#animate#0" expanded="false" />
-            <marker date="1523313677933" expanded="true" signature="38766:38780" ph="..." />
+            <marker date="1523458175773" expanded="true" signature="38766:38780" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1563,56 +702,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/game/game0.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="583">
-          <caret line="35" column="8" lean-forward="true" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
+        <state relative-caret-position="240">
+          <caret line="244" column="5" lean-forward="false" selection-start-line="244" selection-start-column="5" selection-end-line="244" selection-end-column="5" />
           <folding>
-            <element signature="n#!!block;n#createLoseScene#0" expanded="false" />
-            <element signature="n#!!block;n#createEndScene#0" expanded="false" />
-            <element signature="n#!!block;n#createStartScene#0" expanded="false" />
-            <element signature="n#!!block;n#initTextMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createStartText#0" expanded="false" />
-            <element signature="e#5632#5672#0" expanded="false" />
-            <element signature="e#5962#6004#0" expanded="false" />
-            <element signature="e#6252#6285#0" expanded="false" />
-            <element signature="e#6383#6412#0" expanded="false" />
-            <element signature="n#!!block;n#initMonsterList2#0" expanded="false" />
-            <element signature="n#!!block;n#updateScoreText#0" expanded="false" />
-            <element signature="n#!!block;n#initScoreTextMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createDeadBox#0" expanded="false" />
-            <element signature="n#!!block;n#createRedBox#0" expanded="false" />
-            <element signature="n#!!block;n#createBouncyRedSphere#0" expanded="false" />
-            <element signature="n#!!block;n#randN#0" expanded="false" />
-            <element signature="n#!!block;n#addBalls#0" expanded="false" />
-            <element signature="e#11993#13148#0" expanded="false" />
-            <element signature="n#!!block;n#playGameMusic#0" expanded="false" />
-            <element signature="n#!!block;n#soundEffect#0" expanded="false" />
-            <element signature="e#14131#14181#0" expanded="false" />
-            <element signature="n#!!block;n#initScene#0" expanded="false" />
-            <element signature="n#!!block;n#initPhysijs#0" expanded="false" />
-            <element signature="n#!!block;n#initRenderer#0" expanded="false" />
-            <element signature="n#!!block;n#createPointLight#0" expanded="false" />
-            <element signature="n#!!block;n#createBoxMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createBoxMesh2#0" expanded="false" />
-            <element signature="n#!!block;n#createWall#0" expanded="false" />
-            <element signature="n#!!block;n#createGround#0" expanded="false" />
-            <element signature="n#!!block;n#createSkyBox#0" expanded="false" />
-            <element signature="n#!!block;n#createObjMtlModel#0" expanded="false" />
-            <element signature="e#18262#18268#0" expanded="false" />
-            <element signature="n#!!block;n#createGroup#0" expanded="false" />
-            <element signature="n#!!block;n#createOBJmodel#0" expanded="false" />
-            <element signature="n#!!block;n#initmonkeyAvatarJSON#0" expanded="false" />
-            <element signature="n#!!block;n#createConeMesh#0" expanded="false" />
-            <element signature="n#!!block;n#createBall#0" expanded="false" />
-            <element signature="n#!!block;n#createPLow#0" expanded="false" />
-            <element signature="n#!!block;n#initControls#0" expanded="false" />
-            <element signature="n#!!block;n#keyup#0" expanded="false" />
-            <element signature="n#!!block;n#updateNPC#0" expanded="false" />
-            <element signature="n#!!block;n#initLevel1OBJ#0" expanded="false" />
-            <element signature="n#!!block;n#updateAvatar#0" expanded="false" />
-            <element signature="n#!!block;n#updateSuzyOBJ#0" expanded="false" />
-            <element signature="n#!!block;n#updateFences#0" expanded="false" />
-            <element signature="n#!!block;n#animate#0" expanded="false" />
-            <marker date="1523313677933" expanded="true" signature="38766:38780" ph="..." />
+            <marker date="1523458175773" expanded="true" signature="38766:38780" ph="..." />
           </folding>
         </state>
       </provider>
