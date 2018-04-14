@@ -4,6 +4,10 @@ Game 0
 This is a ThreeJS program which implements a simple game
 The user moves a cube around the board trying to knock balls into a cone
 
+
+Todo: 3. fix bugs avatar can go inside mountain
+Todo: 4. Create game function about avatar -- monkey
+
 */
 
 
@@ -46,6 +50,8 @@ var instructionsCamera; //Ethan
 
 
 var deadBox, scoreText;
+
+var scale_factor = 0.5;
 
 var meaningless = 0;
 meaningless += 1;
@@ -316,7 +322,7 @@ function init(){
 
 
 	var p = genRandLoc();
-	createGroup("lotus.obj", "lotust.jpg",p[0], p[1],1.5);
+	createLotus("lotus.obj", "lotust.jpg",p[0], p[1],1.5);
   playGameMusic() //Ethan
 
 }
@@ -324,6 +330,8 @@ function init(){
 
 function createMainScene(){
   // setup lighting
+
+
 	var light1 = createPointLight();
 	light1.position.set(0,200,20);
 	scene.add(light1);
@@ -357,7 +365,7 @@ function createMainScene(){
 	// initMonsterList2();
 	initFenceList(6);
 
-	// createObjMtlModel();
+	// createFence();
 
 	avatarCam.position.set(0,4,0);
 	avatarCam.lookAt(0,4,10);
@@ -459,7 +467,7 @@ function initFenceList(n) {
 	for (var i = 0; i < n; i++) {
 		var p = genRandLoc();
 
-		createObjMtlModel(null, fences,p[0], p[1]);
+		createFence(null, fences,p[0], p[1]);
 
 
 	}
@@ -522,7 +530,6 @@ function initScoreTextMesh(){
 	loader.load( '/fonts/helvetiker_regular.typeface.json',
 		createScoreText);
 	console.log("preparing to load the font");
-
 }
 function createScoreText(font) {
 	var textGeometry1 =
@@ -797,8 +804,9 @@ function createSkyBox(image,k){
 var suzyOBJ;
 
 
+//
 
-function createObjMtlModel(newobj2, fences, x, z) {
+function createFence(newobj2, fences, x, z) {
 	var mtlLoader = new THREE.MTLLoader();
 	mtlLoader.setBaseUrl( '../models/' );
 	mtlLoader.setPath( '../models/' );
@@ -818,9 +826,11 @@ function createObjMtlModel(newobj2, fences, x, z) {
 
 			//ver0
 			newobj2.position.set(x,0,z);
-			newobj2.scale.set(2.5,2.5,2.5);
+			newobj2.scale.set(2.5 * scale_factor,2.5 * scale_factor,2.5 * scale_factor);
 			fences.push(newobj2);
 			scene.add(newobj2);
+
+			
 
 			//ver1
 			// var geometry = object.children[0].geometry;
@@ -857,7 +867,7 @@ function createObjMtlModel(newobj2, fences, x, z) {
 
 }
 
-function createGroup( objname, texturename, x, z, scale) {
+function createLotus(objname, texturename, x, z, scale) {
 	var loader = new THREE.CycOBJLoader();
 	loader.load("../models/" + objname,
 		function ( obj) {
@@ -886,7 +896,7 @@ function createGroup( objname, texturename, x, z, scale) {
 				console.log("child processing");
 				var geometry = child.geometry;
 				lotus.children[i] = new THREE.Mesh(geometry,material);
-				lotus.children[i].scale.set(scale,scale,scale);
+				lotus.children[i].scale.set(scale * scale_factor,scale * scale_factor,scale * scale_factor);
 				lotus.children[i].position.set(x,0,z);
 				// lotus.children[i]
 				lotus.children[i].castShadow = true;
@@ -937,7 +947,7 @@ function createMonstermodel(monsterlist, newobj, objname, texturename, x, z, sca
 			// geometry.boundingBox = box;
 
 			newobj = new Physijs.BoxMesh(geometry,pmaterial);
-			newobj.scale.set(scale, scale, scale);
+			newobj.scale.set(scale * scale_factor, scale * scale_factor, scale * scale_factor);
 			newobj.position.set(x, 1,z);
 			newobj.__dirtyPosition = true;
 			// newobj.setDamping(0.1,0.1);
@@ -998,7 +1008,7 @@ function createOBJmodel(newobj, objname, texturename, x, z, scale, gravity) {
 			// geometry.scale = new THREE.Vector3(5,5,5);
 
 			newobj = new Physijs.BoxMesh(geometry,pmaterial, gravity);
-			newobj.scale.set(scale, scale, scale);
+			newobj.scale.set(scale * scale_factor, scale * scale_factor, scale * scale_factor);
 			newobj.position.set(x,0,z);
 			newobj.castShadow = true;
 			scene.add(newobj);
@@ -1065,7 +1075,7 @@ function cycInitAvatar() {
 
 			//geometry.scale.set(0.5,0.5,0.5);
 			avatar = new Physijs.BoxMesh( geometry, material );
-			avatar.scale.set(0.5,0.5,0.5);
+			avatar.scale.set(0.5 * scale_factor,0.5 * scale_factor,0.5 * scale_factor);
 			avatar.__dirtyPosition = true;
 			avatar.position.set(51,10,-37);
 			avatar.rotateY(Math.PI/2);
@@ -1399,16 +1409,19 @@ function initLevel1OBJ(){
 			texture.wrapT = THREE.RepeatWrapping;
 			texture.repeat.set( 1, 1 );
 			var material = new THREE.MeshLambertMaterial( { color: 0xffffff,  map: texture ,side:THREE.DoubleSide} );
-
+			
 
 			// var pmaterial = new Physijs.createMaterial(material,0.9,0);
 
 
-			// level1= new Physijs.BoxMesh(geometry,pmaterial, 0);
+			// level1= new Physijs.ConcaveMesh(geometry,pmaterial, 0);
+
 
 			level1 = new THREE.Mesh(geometry, material);
 			level1.position.set(20,-13,20);
 
+
+			
 			//scale up the mesh
 			var s = 10.5;
 			level1.scale.y=s;
@@ -1443,6 +1456,24 @@ function updateAvatar(){
 	// 	avatar.rotation.set(rotate_x,avatar.rotation.y,rotate_z);
 	// 	avatar.__dirtyRotation=true;
 	// }
+
+
+	// keep avata vertical, but might get stucked when you go to some dirty positions
+	x_over_rotation = avatar.rotation.x > 0.1 && avatar.rotation.x < Math.PI - 0.1  || avatar.rotation.x < - 0.1 && avatar.rotation.x > - Math.PI + 0.1
+	z_over_rotation = avatar.rotation.z > 0.1 && avatar.rotation.z < Math.PI - 0.1  || avatar.rotation.z < - 0.1 && avatar.rotation.z > - Math.PI + 0.1
+	// z_over_rotation = avatar.rotation.z > 0.1 || avatar.rotation.z < - 0.1
+	if (x_over_rotation) {
+		avatar.rotation.x = 0;
+	}
+	if (z_over_rotation) {
+		avatar.rotation.z = 0
+	}
+	avatar.__dirtyRotation = true
+
+	// console.log("avatar rotation x is" + avatar.rotation.x);
+	// console.log("avatar rotation y is" + avatar.rotation.y);
+	// console.log("avatar rotation z is" + avatar.rotation.z);
+
 
 
 	var forward = avatar.getWorldDirection();
@@ -1486,6 +1517,12 @@ function updateAvatar(){
 	if (lotus != null && avatar.position.distanceTo(lotus.position) < 3 && gameState.score >= 4) {
 		gameState.scene = 'youwon';
 	}
+
+	// fix x z rotation bug, make avatar vertical
+	
+	// avatar.rotation.set(0, avatar.rotation.y, 0);
+	// avatar.__dirtyRotation = true;
+
 }
 
 function updateSuzyOBJ(){
