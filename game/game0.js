@@ -1068,7 +1068,7 @@ function cycInitAvatar() {
 			avatar.scale.set(0.5,0.5,0.5);
 			avatar.__dirtyPosition = true;
 			avatar.position.set(51,10,-37);
-			avatar.rotateY(-Math.PI/2);
+			avatar.rotateY(Math.PI/2);
 			avatar.__dirtyRotation=true;
 
 			avatar.add(avatarCam);
@@ -1433,6 +1433,17 @@ function initLevel1OBJ(){
 
 function updateAvatar(){
 	"change the avatar's linear or angular velocity based on controls state (set by WSAD key presses)"
+	console.log("rotation of avatar: " + parseFloat(avatar.rotation.x ).toFixed( 2 )
+		+ "," +parseFloat(avatar.rotation.z ).toFixed( 2 ));
+	var boox = avatar.rotation.x  < -0.1 || avatar.rotation.x > 0.1;
+	var booz = avatar.rotation.z < -0.1 || avatar.rotation.z > 0.1;
+	// if (boox || booz) {
+	// 	var rotate_x = boox ? 0 : avatar.rotation.x ;
+	// 	var rotate_z = booz ? 0: avatar.rotation.z;
+	// 	avatar.rotation.set(rotate_x,avatar.rotation.y,rotate_z);
+	// 	avatar.__dirtyRotation=true;
+	// }
+
 
 	var forward = avatar.getWorldDirection();
 
