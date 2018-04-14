@@ -1476,6 +1476,24 @@ function updateAvatar(){
 
 
 
+	// keep avata vertical, but might get stucked when you go to some dirty positions
+	x_over_rotation = avatar.rotation.x > 0.1 && avatar.rotation.x < Math.PI - 0.1  || avatar.rotation.x < - 0.1 && avatar.rotation.x > - Math.PI + 0.1
+	z_over_rotation = avatar.rotation.z > 0.1 && avatar.rotation.z < Math.PI - 0.1  || avatar.rotation.z < - 0.1 && avatar.rotation.z > - Math.PI + 0.1
+	// z_over_rotation = avatar.rotation.z > 0.1 || avatar.rotation.z < - 0.1
+	if (x_over_rotation) {
+		avatar.rotation.x = 0;
+	}
+	if (z_over_rotation) {
+		avatar.rotation.z = 0
+	}
+	avatar.__dirtyRotation = true
+
+	// console.log("avatar rotation x is" + avatar.rotation.x);
+	// console.log("avatar rotation y is" + avatar.rotation.y);
+	// console.log("avatar rotation z is" + avatar.rotation.z);
+
+
+
 	var forward = avatar.getWorldDirection();
 
 	if (controls.fwd){
