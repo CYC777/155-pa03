@@ -217,7 +217,7 @@ function createMainScene(){
 	// initMonsterList2();
 	initFenceList(3);
 
-	// createObjMtlModel();
+	// createFence();
 
 	avatarCam.position.set(0,4,0);
 	avatarCam.lookAt(0,4,10);

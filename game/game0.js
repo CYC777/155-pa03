@@ -4,6 +4,12 @@ Game 0
 This is a ThreeJS program which implements a simple game
 The user moves a cube around the board trying to knock balls into a cone
 
+
+Todo: 1. Scale down object
+Todo: 2. fix bugs about avatar vertical
+Todo: 3. fix bugs avatar can go inside mountain
+Todo: 4. Create game function about avatar -- monkey
+
 */
 
 
@@ -316,7 +322,7 @@ function init(){
 
 
 	var p = genRandLoc();
-	createGroup("lotus.obj", "lotust.jpg",p[0], p[1],1.5);
+	createLotus("lotus.obj", "lotust.jpg",p[0], p[1],1.5);
   playGameMusic() //Ethan
 
 }
@@ -324,6 +330,8 @@ function init(){
 
 function createMainScene(){
   // setup lighting
+
+
 	var light1 = createPointLight();
 	light1.position.set(0,200,20);
 	scene.add(light1);
@@ -357,7 +365,7 @@ function createMainScene(){
 	// initMonsterList2();
 	initFenceList(3);
 
-	// createObjMtlModel();
+	// createFence();
 
 	avatarCam.position.set(0,4,0);
 	avatarCam.lookAt(0,4,10);
@@ -459,7 +467,7 @@ function initFenceList(n) {
 	for (var i = 0; i < n; i++) {
 		var p = genRandLoc();
 
-		createObjMtlModel(null, fences,p[0], p[1]);
+		createFence(null, fences,p[0], p[1]);
 
 
 	}
@@ -522,7 +530,6 @@ function initScoreTextMesh(){
 	loader.load( '/fonts/helvetiker_regular.typeface.json',
 		createScoreText);
 	console.log("preparing to load the font");
-
 }
 function createScoreText(font) {
 	var textGeometry1 =
@@ -797,8 +804,9 @@ function createSkyBox(image,k){
 var suzyOBJ;
 
 
+//
 
-function createObjMtlModel(newobj2, fences, x, z) {
+function createFence(newobj2, fences, x, z) {
 	var mtlLoader = new THREE.MTLLoader();
 	mtlLoader.setBaseUrl( '../models/' );
 	mtlLoader.setPath( '../models/' );
@@ -857,7 +865,7 @@ function createObjMtlModel(newobj2, fences, x, z) {
 
 }
 
-function createGroup( objname, texturename, x, z, scale) {
+function createLotus(objname, texturename, x, z, scale) {
 	var loader = new THREE.CycOBJLoader();
 	loader.load("../models/" + objname,
 		function ( obj) {
@@ -1434,6 +1442,21 @@ function initLevel1OBJ(){
 function updateAvatar(){
 	"change the avatar's linear or angular velocity based on controls state (set by WSAD key presses)"
 
+	
+	x_over_rotation = avatar.rotation.x > 0.1 && avatar.rotation.x < Math.PI - 0.1  || avatar.rotation.x < - 0.1 && avatar.rotation.x > - Math.PI + 0.1
+	z_over_rotation = avatar.rotation.z > 0.1 && avatar.rotation.z < Math.PI - 0.1  || avatar.rotation.z < - 0.1 && avatar.rotation.z > - Math.PI + 0.1
+	// z_over_rotation = avatar.rotation.z > 0.1 || avatar.rotation.z < - 0.1
+	if (x_over_rotation) {
+		avatar.rotation.x = 0;
+	}
+	if (z_over_rotation) {
+		avatar.rotation.z = 0
+	}
+
+	console.log("avatar rotation x is" + avatar.rotation.x);
+	console.log("avatar rotation y is" + avatar.rotation.y);
+	console.log("avatar rotation z is" + avatar.rotation.z);
+
 	var forward = avatar.getWorldDirection();
 
 	if (controls.fwd){
@@ -1475,6 +1498,12 @@ function updateAvatar(){
 	if (lotus != null && avatar.position.distanceTo(lotus.position) < 3 && gameState.score >= 4) {
 		gameState.scene = 'youwon';
 	}
+
+	// fix x z rotation bug, make avatar vertical
+	
+	// avatar.rotation.set(0, avatar.rotation.y, 0);
+	// avatar.__dirtyRotation = true;
+
 }
 
 function updateSuzyOBJ(){
