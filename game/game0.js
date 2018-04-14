@@ -6,7 +6,6 @@ The user moves a cube around the board trying to knock balls into a cone
 
 
 Todo: 1. Scale down object
-Todo: 2. fix bugs about avatar vertical
 Todo: 3. fix bugs avatar can go inside mountain
 Todo: 4. Create game function about avatar -- monkey
 
@@ -52,6 +51,8 @@ var instructionsCamera; //Ethan
 
 
 var deadBox, scoreText;
+
+var scale_factor = 0.5;
 
 var meaningless = 0;
 meaningless += 1;
@@ -826,7 +827,7 @@ function createFence(newobj2, fences, x, z) {
 
 			//ver0
 			newobj2.position.set(x,0,z);
-			newobj2.scale.set(2.5,2.5,2.5);
+			newobj2.scale.set(2.5 * scale_factor,2.5 * scale_factor,2.5 * scale_factor);
 			fences.push(newobj2);
 			scene.add(newobj2);
 
@@ -894,7 +895,7 @@ function createLotus(objname, texturename, x, z, scale) {
 				console.log("child processing");
 				var geometry = child.geometry;
 				lotus.children[i] = new THREE.Mesh(geometry,material);
-				lotus.children[i].scale.set(scale,scale,scale);
+				lotus.children[i].scale.set(scale * scale_factor,scale * scale_factor,scale * scale_factor);
 				lotus.children[i].position.set(x,0,z);
 				// lotus.children[i]
 				lotus.children[i].castShadow = true;
@@ -945,7 +946,7 @@ function createMonstermodel(monsterlist, newobj, objname, texturename, x, z, sca
 			// geometry.boundingBox = box;
 
 			newobj = new Physijs.BoxMesh(geometry,pmaterial);
-			newobj.scale.set(scale, scale, scale);
+			newobj.scale.set(scale * scale_factor, scale * scale_factor, scale * scale_factor);
 			newobj.position.set(x, 1,z);
 			newobj.__dirtyPosition = true;
 			// newobj.setDamping(0.1,0.1);
@@ -1006,7 +1007,7 @@ function createOBJmodel(newobj, objname, texturename, x, z, scale, gravity) {
 			// geometry.scale = new THREE.Vector3(5,5,5);
 
 			newobj = new Physijs.BoxMesh(geometry,pmaterial, gravity);
-			newobj.scale.set(scale, scale, scale);
+			newobj.scale.set(scale * scale_factor, scale * scale_factor, scale * scale_factor);
 			newobj.position.set(x,0,z);
 			newobj.castShadow = true;
 			scene.add(newobj);
@@ -1073,7 +1074,7 @@ function cycInitAvatar() {
 
 			//geometry.scale.set(0.5,0.5,0.5);
 			avatar = new Physijs.BoxMesh( geometry, material );
-			avatar.scale.set(0.5,0.5,0.5);
+			avatar.scale.set(0.5 * scale_factor,0.5 * scale_factor,0.5 * scale_factor);
 			avatar.__dirtyPosition = true;
 			avatar.position.set(51,10,-37);
 			avatar.rotateY(-Math.PI/2);
@@ -1442,7 +1443,7 @@ function initLevel1OBJ(){
 function updateAvatar(){
 	"change the avatar's linear or angular velocity based on controls state (set by WSAD key presses)"
 
-	
+	// keep avata vertical, but might get stucked when you go to some dirty positions
 	x_over_rotation = avatar.rotation.x > 0.1 && avatar.rotation.x < Math.PI - 0.1  || avatar.rotation.x < - 0.1 && avatar.rotation.x > - Math.PI + 0.1
 	z_over_rotation = avatar.rotation.z > 0.1 && avatar.rotation.z < Math.PI - 0.1  || avatar.rotation.z < - 0.1 && avatar.rotation.z > - Math.PI + 0.1
 	// z_over_rotation = avatar.rotation.z > 0.1 || avatar.rotation.z < - 0.1
@@ -1453,9 +1454,11 @@ function updateAvatar(){
 		avatar.rotation.z = 0
 	}
 
-	console.log("avatar rotation x is" + avatar.rotation.x);
-	console.log("avatar rotation y is" + avatar.rotation.y);
-	console.log("avatar rotation z is" + avatar.rotation.z);
+	// console.log("avatar rotation x is" + avatar.rotation.x);
+	// console.log("avatar rotation y is" + avatar.rotation.y);
+	// console.log("avatar rotation z is" + avatar.rotation.z);
+
+
 
 	var forward = avatar.getWorldDirection();
 
