@@ -5,7 +5,6 @@ This is a ThreeJS program which implements a simple game
 The user moves a cube around the board trying to knock balls into a cone
 
 
-Todo: 1. Scale down object
 Todo: 3. fix bugs avatar can go inside mountain
 Todo: 4. Create game function about avatar -- monkey
 
@@ -831,6 +830,8 @@ function createFence(newobj2, fences, x, z) {
 			fences.push(newobj2);
 			scene.add(newobj2);
 
+			
+
 			//ver1
 			// var geometry = object.children[0].geometry;
 			// var material = object.children[0].material;
@@ -1408,16 +1409,19 @@ function initLevel1OBJ(){
 			texture.wrapT = THREE.RepeatWrapping;
 			texture.repeat.set( 1, 1 );
 			var material = new THREE.MeshLambertMaterial( { color: 0xffffff,  map: texture ,side:THREE.DoubleSide} );
-
+			
 
 			// var pmaterial = new Physijs.createMaterial(material,0.9,0);
 
 
-			// level1= new Physijs.BoxMesh(geometry,pmaterial, 0);
+			// level1= new Physijs.ConcaveMesh(geometry,pmaterial, 0);
+
 
 			level1 = new THREE.Mesh(geometry, material);
 			level1.position.set(20,-13,20);
 
+
+			
 			//scale up the mesh
 			var s = 10.5;
 			level1.scale.y=s;
@@ -1453,6 +1457,7 @@ function updateAvatar(){
 	if (z_over_rotation) {
 		avatar.rotation.z = 0
 	}
+	avatar.__dirtyRotation = true
 
 	// console.log("avatar rotation x is" + avatar.rotation.x);
 	// console.log("avatar rotation y is" + avatar.rotation.y);
