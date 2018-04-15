@@ -345,9 +345,9 @@ function createMainScene(){
 
 
 	// create the ground and the skybox
-	var ground = createGround('deserttexture.jpg');
+	var ground = createGround('green2.jpg');
 	scene.add(ground);
-	var skybox = createSkyBox('cloudyt2.jpg',1);
+	var skybox = createSkyBox('blue2.jpg',5);
 	scene.add(skybox);
 
 	// create the avatar
@@ -424,37 +424,39 @@ function createMainScene(){
 	initLevel1OBJ();
 	//these walls are for preventing the player from walking under the terrain
 	//center wall
-	var wall1 = createWall('white',49,5,75);
-	wall1.position.set(-6,0,14);
+	var wallHeight = 8.2;
+	var wallColor = 'transparent';
+	var wall1 = createTransparentWall(wallColor,52,wallHeight,85);
+	wall1.position.set(-6,0,15);
 	scene.add(wall1);
 
 	//SE box wall
-	var wall2 = createWall('white',60,5,60);
+	var wall2 = createTransparentWall('white',60,wallHeight,66);
 	wall2.position.set(66.6,0,-32.5);
 	scene.add(wall2);
 
 	//NE box wall
-	var wall3 = createWall('white',60,5,60);
+	var wall3 = createTransparentWall('white',60,wallHeight,64);
 	wall3.position.set(68,0,58);
 	scene.add(wall3);
 
 	//S long wall
-	var wall4 = createWall('white',90,5,1);
+	var wall4 = createTransparentWall('white',90,wallHeight,3);
 	wall4.position.set(-4,0,93);
 	scene.add(wall4);
 
 	//N long wall
-	var wall5 = createWall('white',90,5,1);
+	var wall5 = createTransparentWall('white',90,wallHeight,5);
 	wall5.position.set(-6,0,-52);
 	scene.add(wall5);
 
 	//W long wall
-	var wall6 = createWall('white' ,1,5,150);
+	var wall6 = createTransparentWall('white' ,4,wallHeight,150);
 	wall6.position.set(-47.5,0,20);
 	scene.add(wall6);
 
 	//E long wall
-	var wall7 = createWall('white' ,1,5,40);
+	var wall7 = createTransparentWall('white' ,5,wallHeight,40);
 	wall7.position.set(100.6,0,10);
 	scene.add(wall7);
 
@@ -760,6 +762,14 @@ mesh = new Physijs.BoxMesh( geometry, material, 0 );
 mesh.castShadow = true;
 return mesh;
 }
+function createTransparentWall(color,w,h,d){
+	var geometry = new THREE.BoxGeometry( w, h, d);
+	var material = new THREE.MeshLambertMaterial( { color: 'white', transparent: true, opacity: 0} );
+	mesh = new Physijs.BoxMesh( geometry, material, 0 );
+//mesh = new Physijs.BoxMesh( geometry, material,0 );
+// 	mesh.castShadow = true;
+	return mesh;
+}
 
 function createGround(image){
 	// creating a textured plane which receives shadows
@@ -767,7 +777,7 @@ function createGround(image){
 	var texture = new THREE.TextureLoader().load( '../images/'+image );
 	texture.wrapS = THREE.RepeatWrapping;
 	texture.wrapT = THREE.RepeatWrapping;
-	texture.repeat.set( 15, 15 );
+	texture.repeat.set( 5, 5 );
 	var material = new THREE.MeshLambertMaterial( { color: 0xffffff,  map: texture ,side:THREE.DoubleSide} );
 	var pmaterial = new Physijs.createMaterial(material,0.9,0.05);
 	//var mesh = new THREE.Mesh( geometry, material );
@@ -1067,8 +1077,13 @@ function cycInitAvatar() {
 			obj.castShadow = true;
 			var geometry = obj.children[0].geometry;
 
+			// var texture = new THREE.TextureLoader().load( '../images/green6.jpg' );
+			// // texture.wrapS = THREE.RepeatWrapping;
+			// // texture.wrapT = THREE.RepeatWrapping;
+			// // texture.repeat.set( 1, 1 );
+			// var material = new THREE.MeshLambertMaterial( { color: 0xffffff,  map: texture ,side:THREE.DoubleSide} );
 
-
+			// green
 			var material = new THREE.MeshLambertMaterial( { color: 0x00ff00 } );
 
 
@@ -1404,10 +1419,10 @@ function initLevel1OBJ(){
 			var geometry = level1.children[0].geometry;
 			//var material = level1.children[0].material;
 
-			var texture = new THREE.TextureLoader().load( '../images/rocks.jpg' );
+			var texture = new THREE.TextureLoader().load( '../images/mountain4.jpg' );
 			texture.wrapS = THREE.RepeatWrapping;
 			texture.wrapT = THREE.RepeatWrapping;
-			texture.repeat.set( 1, 1 );
+			texture.repeat.set( 10, 10 );
 			var material = new THREE.MeshLambertMaterial( { color: 0xffffff,  map: texture ,side:THREE.DoubleSide} );
 			
 
