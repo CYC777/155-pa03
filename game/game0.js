@@ -34,7 +34,7 @@ var monsterscales = [0.05, 0.06,0.07, 0.05];
 
 var objnames = ["DeadTree.obj","DeadTree.obj", "rock.obj", "house.obj"];
 var objtextures = ["treetexture.jpg","treetexture.jpg","rocktexture.jpg", "houset.jpg"];
-var objscales = [1,1,2,0.01];
+var objscales = [1,1,2.5,0.01];
 
 var cone;
 var npc;
@@ -378,9 +378,9 @@ function createMainScene(){
 
 	// addBalls();
 
-	cone = createConeMesh(4,6);
-	cone.position.set(10,3,7);
-	scene.add(cone);
+	// cone = createConeMesh(4,6);
+	// cone.position.set(10,3,7);
+	// scene.add(cone);
 
 	// npc = createBoxMesh2(0x0000ff,1,2,4);
 	// npc.position.set(30,5,-30);
@@ -519,6 +519,8 @@ function createOBJList(list, names, textures, scales, gravity) {
 
 		mesh = createOBJmodel(mesh, names[i], textures[i],
 			p[0], p[1], scales[i], gravity);
+
+
 		list.push(mesh);
 	}
 }
@@ -837,6 +839,10 @@ function createFence(newobj2, fences, x, z) {
 			//ver0
 			newobj2.position.set(x,0,z);
 			newobj2.scale.set(2.5 * scale_factor,2.5 * scale_factor,2.5 * scale_factor);
+			var rotateAngle = genRandRotation();
+			newobj2.rotateY(rotateAngle);
+			newobj2.__dirtyRotation = true;
+
 			fences.push(newobj2);
 			scene.add(newobj2);
 
@@ -1021,6 +1027,11 @@ function createOBJmodel(newobj, objname, texturename, x, z, scale, gravity) {
 			newobj.scale.set(scale * scale_factor, scale * scale_factor, scale * scale_factor);
 			newobj.position.set(x,0,z);
 			newobj.castShadow = true;
+
+			var rotateAngle = genRandRotation();
+			newobj.rotateY(rotateAngle);
+			newobj.__dirtyRotation = true;
+
 			scene.add(newobj);
 			console.log("just added newOBJ");
 			//suzyOBJ = new Physijs.BoxMesh(obj);
@@ -1093,14 +1104,15 @@ function cycInitAvatar() {
 			avatar.scale.set(0.5 * scale_factor,0.5 * scale_factor,0.5 * scale_factor);
 			avatar.__dirtyPosition = true;
 			avatar.position.set(51,10,-37);
-			avatar.rotateY(Math.PI/2);
+			// avatar.position.set(30,-16,0);
+			avatar.rotateY(-Math.PI/2);
 			avatar.__dirtyRotation=true;
 
 			avatar.add(avatarCam);
 
 			avatar.translateY(20);
-			avatarCam.translateY(6);
-			avatarCam.translateZ(20);
+			avatarCam.translateY(20);
+			avatarCam.translateZ(50);
 
 			// newobj.position.set(51, ,z);
 			// newobj.__dirtyPosition = true;
@@ -1351,14 +1363,15 @@ function random() {
 	var x = Math.sin(seed++) * 10000;
 	return x - Math.floor(x);
 }
-//a,b is two diagonal points
+//a,b is two diagonal points, top-left and bottom-right
 function genRandLoc() {
-	a = [-45, -49];
-	b = [98,90];
+	a = [-43.5, -47];
+	b = [96,89];
+	//forbidden area
 	nofly = [
-		[[-31,-24], [19,52]],
-		[[36.6,28],[98,90]],
-		[[38,-49],[98, -4]]
+		[[-43.5,-27.5], [20,57.5]],
+		[[36.6,26],[96,89]],
+		[[38,-47],[96, -1]]
 	];
 
 	var xrangeMin = a[0];
@@ -1380,6 +1393,12 @@ function genRandLoc() {
 	return [xRand, zRand];
 
 
+}
+
+function genRandRotation() {
+	var rangeMin = -Math.PI;
+	var rangeMax = Math.PI;
+	return rangeMin + (rangeMax - rangeMin) * Math.random();
 }
 
 function checkInRange(p, rect) {
@@ -1461,8 +1480,8 @@ function initLevel1OBJ(){
 
 function updateAvatar(){
 	"change the avatar's linear or angular velocity based on controls state (set by WSAD key presses)"
-	console.log("rotation of avatar: " + parseFloat(avatar.rotation.x ).toFixed( 2 )
-		+ "," +parseFloat(avatar.rotation.z ).toFixed( 2 ));
+	// console.log("rotation of avatar: " + parseFloat(avatar.rotation.x ).toFixed( 2 )
+	// 	+ "," +parseFloat(avatar.rotation.z ).toFixed( 2 ));
 	var boox = avatar.rotation.x  < -0.1 || avatar.rotation.x > 0.1;
 	var booz = avatar.rotation.z < -0.1 || avatar.rotation.z > 0.1;
 	// if (boox || booz) {
