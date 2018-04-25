@@ -373,46 +373,6 @@ function createMainScene(){
     edgeCam.position.set(20,20,10);
 	gameState.camera = edgeCam;
 
-	// addBalls();
-
-	// cone = createConeMesh(4,6);
-	// cone.position.set(10,3,7);
-	// scene.add(cone);
-
-	// npc = createBoxMesh2(0x0000ff,1,2,4);
-	// npc.position.set(30,5,-30);
-	// npc.addEventListener('collision',function(other_object){
-	// 	if (other_object==avatar){
-	// 		gameState.health -= 1;
-	// 		npc.position.set(randN(20)+15,5,randN(20)+15);
-	// 		npc.__dirtyPosition = true;
-	//
-	//
-	// 	}
-	// });
-	// scene.add(npc);
-
-    // var wall = createWall(0xffaa00,50,3,1);
-    // wall.position.set(10,0,10);
-    // scene.add(wall);
-	//console.dir(npc);
-	//playGameMusic();
-	// brs = createBouncyRedSphere();
-	// brs.position.set(-40,40,40);
-	// scene.add(brs);
-	// console.log('just added brs');
-	// console.dir(brs);
-
-	// var platform = createRedBox();
-	// platform.position.set(0,50,0);
-	// platform.__dirtyPosition=true;
-	// scene.add(platform);
-
-	// deadBox = createDeadBox();
-	// deadBox.position.set(-20, 5, 20);
-	// deadBox.__directPosition = true;
-	// scene.add(deadBox);
-
 	initScoreTextMesh();
 	// initScoreScoreTextMesh();
 
@@ -500,14 +460,6 @@ function initMonsterList(n) {
 	}
 
 }
-function initMonsterList2() {
-	console.log("monsters len is " + monsters.length);
-	for (var i = 0; i < monsters.length; i++) {
-		console.log("monster " + i + "position is " + monsters[i].position);
-		monsters[i].position.set(Math.random() * 50,10, Math.random() * 50);
-		monsters[i].__dirtyPosition = true;
-	}
-}
 //
 function createOBJList(list, names, textures, scales, gravity) {
 	for (var i = 0; i < objnames.length; i++) {
@@ -552,66 +504,7 @@ function createScoreText(font) {
 	scene.add(scoreText);
 
 }
-function createDeadBox(){
-	var geometry = new THREE.BoxGeometry( 5, 10, 2);
 
-	var texture = new THREE.TextureLoader().load( '../images/skull.jpg');
-	texture.wrapS = THREE.RepeatWrapping;
-	texture.wrapT = THREE.RepeatWrapping;
-
-	texture.repeat.set( 3,3);
-	var material = new THREE.MeshLambertMaterial( { color: 0xffffff,  map: texture ,side:THREE.DoubleSide} );
-
-
-
-	// var material = new THREE.MeshLambertMaterial( { color: 0x000000} );
-	var pmaterial = new Physijs.createMaterial(material,0.9,0.95);
-	mesh = new Physijs.BoxMesh( geometry, pmaterial, 0);
-	//mesh = new Physijs.BoxMesh( geometry, material,0 );
-	mesh.castShadow = true;
-	mesh.addEventListener( 'collision',
-		function( other_object, relative_velocity, relative_rotation, contact_normal ) {
-			if (other_object==avatar){
-				gameState.scene = 'youlose'
-
-			}
-		}
-	)
-	return mesh;
-}
-
-function createRedBox(){
-	var geometry = new THREE.BoxGeometry( 10, 2, 10);
-	var material = new THREE.MeshLambertMaterial( { color: 0xff0000} );
-	mesh = new Physijs.BoxMesh( geometry, material, 0);
-//mesh = new Physijs.BoxMesh( geometry, material,0 );
-	mesh.castShadow = true;
-	return mesh;
-}
-
-function createBouncyRedSphere(){
-    //var geometry = new THREE.SphereGeometry( 4, 20, 20);
-    var geometry = new THREE.SphereGeometry( 5, 16, 16);
-    var material = new THREE.MeshLambertMaterial( { color: 0xff0000} );
-    var pmaterial = new Physijs.createMaterial(material,0.9,0.95);
-    var mass = 10;
-    var mesh = new Physijs.SphereMesh( geometry, pmaterial, mass );
-    mesh.setDamping(0.1,0.1);
-    mesh.castShadow = true;
-
-    mesh.addEventListener( 'collision',
-	    function( other_object, relative_velocity, relative_rotation, contact_normal ) {
-		    if (other_object==avatar){
-			    console.log("avatar hit the big red ball");
-			    soundEffect('bad.wav', 0.5);
-			    gameState.health = gameState.health - 1;
-
-		    }
-	    }
-    )
-
-    return mesh;
-}
 
 function randN(n){
 	return Math.random()*n;
@@ -692,32 +585,7 @@ function createPointLight(){
 	return light;
 }
 
-function createBoxMesh(color){
-	var geometry = new THREE.BoxGeometry( 1, 1, 1);
-	var material = new THREE.MeshLambertMaterial( { color: color} );
-	mesh = new Physijs.BoxMesh( geometry, material );
-//mesh = new Physijs.BoxMesh( geometry, material,0 );
-	mesh.castShadow = true;
-	return mesh;
-}
 
-function createBoxMesh2(color,w,h,d){
-	var geometry = new THREE.BoxGeometry( w, h, d);
-	var material = new THREE.MeshLambertMaterial( { color: color} );
-	mesh = new Physijs.BoxMesh( geometry, material );
-	//mesh = new Physijs.BoxMesh( geometry, material,0 );
-	mesh.castShadow = true;
-	return mesh;
-}
-
-function createWall(color,w,h,d){
-var geometry = new THREE.BoxGeometry( w, h, d);
-var material = new THREE.MeshLambertMaterial( { color: color} );
-mesh = new Physijs.BoxMesh( geometry, material, 0 );
-//mesh = new Physijs.BoxMesh( geometry, material,0 );
-mesh.castShadow = true;
-return mesh;
-}
 function createTransparentWall(color,w,h,d){
 	var geometry = new THREE.BoxGeometry( w, h, d);
 	var material = new THREE.MeshLambertMaterial( { color: 'white', transparent: true, opacity: 0} );
@@ -799,40 +667,7 @@ function createFence(newobj2, fences, x, z) {
 
 			fences.push(newobj2);
 			scene.add(newobj2);
-
-			
-
-			//ver1
-			// var geometry = object.children[0].geometry;
-			// var material = object.children[0].material;
-			// newobj2 = new Physijs.BoxMesh(geometry,material);
-			// newobj2.position.set(25,0,5);
-			//
-			// scene.add( newobj2 );
-
-			//ver2
-			// scene.add(object.children[0]);
-			// scene.add(object.children[1]);
-			// scene.add(object.children[2]);
-
-			//ver3
-			// object.position.set(25,0,5);
-			// object.children[0].castShadow = true;
-			// object.children[0].world = scene;
-			// object.children[1].world = scene;
-			// object.children[2].world = scene;
-			// object.children[1].castShadow = true;
-			// object.children[2].castShadow = true;
-			// scene.add(object);
-
-			// var tobj = object.children[0];
-			// tobj.position.set(40, 0 ,3);
-			// scene.add(tobj);
 		});
-
-		// lightTigress = createPointLight();
-		// lightTigress.position.set(20,10,20);
-		// scene.add(lightTigress);
 	});
 
 }
@@ -1085,12 +920,6 @@ function cycInitAvatar() {
 			obj.castShadow = true;
 			var geometry = obj.children[0].geometry;
 
-			// var texture = new THREE.TextureLoader().load( '../images/green6.jpg' );
-			// // texture.wrapS = THREE.RepeatWrapping;
-			// // texture.wrapT = THREE.RepeatWrapping;
-			// // texture.repeat.set( 1, 1 );
-			// var material = new THREE.MeshLambertMaterial( { color: 0xffffff,  map: texture ,side:THREE.DoubleSide} );
-
 			// green
 			var material = new THREE.MeshLambertMaterial( { color: 0x00ff00 } );
 
@@ -1129,6 +958,7 @@ function cycInitAvatar() {
 		function(err){console.log("error in loading: "+err);}
 	)
 }
+
 function initmonkeyAvatarJSON(){
 	var loader = new THREE.JSONLoader();
 
@@ -1158,48 +988,6 @@ function initmonkeyAvatarJSON(){
 					console.log( (xhr.loaded / xhr.total * 100) + '% loaded' );},
 				function(err){console.log("error in loading: "+err);}
 			)
-
-}
-
-function createConeMesh(r,h){
-	var geometry = new THREE.ConeGeometry( r, h, 32);
-	var texture = new THREE.TextureLoader().load( '../images/tile.jpg' );
-	texture.wrapS = THREE.RepeatWrapping;
-	texture.wrapT = THREE.RepeatWrapping;
-	texture.repeat.set( 1, 1 );
-	var material = new THREE.MeshLambertMaterial( { color: 0xffffff,  map: texture ,side:THREE.DoubleSide} );
-	var pmaterial = new Physijs.createMaterial(material,0.9,0.5);
-	var mesh = new Physijs.ConeMesh( geometry, pmaterial, 0 );
-	mesh.castShadow = true;
-	return mesh;
-}
-
-
-function createBall(){
-	//var geometry = new THREE.SphereGeometry( 4, 20, 20);
-	var geometry = new THREE.SphereGeometry( 1, 16, 16);
-	var material = new THREE.MeshLambertMaterial( { color: 0xffff00} );
-	var pmaterial = new Physijs.createMaterial(material,0.9,0.95);
-    var mesh = new Physijs.BoxMesh( geometry, pmaterial );
-	mesh.setDamping(0.1,0.1);
-	mesh.castShadow = true;
-	return mesh;
-}
-
-//Jacob------------------------------------------------------------------top
-function createPLow(){
-	//this function creates a plow that the avatar can use to eaily push balls
-	//var geometry = new THREE.SphereGeometry( 4, 20, 20);
-	var geometry = new THREE.BoxGeometry( 15, 1, 4);
-	var material = new THREE.MeshLambertMaterial( { color: 'red'} );
-	var pmaterial = new Physijs.createMaterial(material,2,0);
-	var mesh = new Physijs.BoxMesh( geometry, pmaterial );
-	mesh.setDamping(0.1,0.1);
-	mesh.castShadow = true;
-
-	mesh.position.set(20,1,17)
-	scene.add(mesh);
-	console.log("added plow");
 
 }
 
@@ -1338,16 +1126,6 @@ function updateMonsters() {
 		// 	console.log("check boundingbox contains ? " + boo);
 		// }
 	}
-}
-
-function updateNPC(){
-	npc.lookAt(avatar.position);
-  //npc.__dirtyPosition = true;
-	var velocity = -0.5;
-	if (npc.position.distanceTo(avatar.position) < 20){
-		velocity = 0.5;
-	}
-	npc.setLinearVelocity(npc.getWorldDirection().multiplyScalar(velocity));
 }
 
 var seed = 1;
@@ -1581,35 +1359,6 @@ function updateSuzyOBJ(){
         suzyOBJ.__dirtyPosition = true;
         soundEffect('good.wav', 0.5);
     }
-}
-
-function updateFences() {
-	for (var i = 0; i < monsters.length; i++) {
-		for (var j = 0; j < fences.length; j++) {
-			if (monsters[i].position.distanceTo(fences[j]) < 3) {
-				monsters[i].position.y = -50;
-				monsters[i].__dirtyPosition = true;
-				monsters.splice(i,1);
-			}
-		}
-
-	}
-		if (newobj2 == null) return;
-	deltaX = newobj2.position.x - avatar.position.x;
-	deltaY = newobj2.position.y - avatar.position.y;
-	deltaZ = newobj2.position.z - avatar.position.z;
-
-	var distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY + deltaZ * deltaZ);
-
-
-
-		if (distance <= 3) {
-			gameState.health -= 1;
-			// newobj2.position.y = -10;
-			scene.remove(newobj2);
-			newobj2 = null;
-		}
-
 }
 
 function animate() {
