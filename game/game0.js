@@ -358,7 +358,7 @@ function createMainScene(){
 	// initOBJmodel(cycOBJ2, "rock.obj", "rocktexture.jpg", -20, -10,2);
 	createOBJList(phyobjs, objnames, objtextures, objscales, 0);
 
-	initMonsterList(3);
+	initMonsterList(5);
 	// initMonsterList2();
 	initFenceList(6);
 
@@ -606,7 +606,7 @@ function createBouncyRedSphere(){
 	    function( other_object, relative_velocity, relative_rotation, contact_normal ) {
 		    if (other_object==avatar){
 			    console.log("avatar hit the big red ball");
-			    soundEffect('bad.wav');
+			    soundEffect('bad.wav', 0.5);
 			    gameState.health = gameState.health - 1;
 
 		    }
@@ -640,7 +640,7 @@ function playGameMusic(){
 	});
 }
 
-function soundEffect(file){
+function soundEffect(file, volume){
 	// create an AudioListener and add it to the camera
 	var listener = new THREE.AudioListener();
 	camera.add( listener );
@@ -653,7 +653,7 @@ function soundEffect(file){
 	audioLoader.load( '/sounds/'+file, function( buffer ) {
 		sound.setBuffer( buffer );
 		sound.setLoop( false );
-		sound.setVolume( 0.5 );
+		sound.setVolume(volume);
 		sound.play();
 	});
 }
@@ -937,7 +937,7 @@ function createMonstermodel(monsterlist, newobj, objname, texturename, x, z, sca
                                     monsters[i].position.y = -50;
                                     monsters[i].__dirtyPosition = true;
                                     monsters.splice(i,1);
-                                    soundEffect('bad.wav')
+                                    soundEffect('bad.wav', 0.5)
                                     updateScoreText();
                                 }
                             // if (level1Geo != null) {
@@ -947,6 +947,7 @@ function createMonstermodel(monsterlist, newobj, objname, texturename, x, z, sca
                         }
 						if (gameState.health == 0) {
                             gameState.scene = 'youlose';
+                            soundEffect('lose_sound.mp4', 0.15);
 						}
 						// gameState.scene = 'youlose';
 					}
@@ -1042,6 +1043,18 @@ function initmonkeyAvatarOBJ(){
 					scene.add(suzyOBJ);
 					console.log("just added suzyOBJ");
 					//suzyOBJ = new Physijs.BoxMesh(obj);
+
+
+                    // suzyOBJ.addEventListener( 'collision',
+                    //     function( other_object, relative_velocity, relative_rotation, contact_normal ) {
+                    //         if (other_object==avatar){
+                    //             gameState.health += 1;
+                    //             suzyOBJ.position.y = -50;
+                    //             suzyOBJ.__dirtyPosition = true;
+                    //             soundEffect('good.wav');
+                    //         }
+                    //     }
+                    // )
 
 					//
 				},
@@ -1305,7 +1318,7 @@ function updateMonsters() {
 				monsters[i].__dirtyPosition = true;
 				monsters.splice(i,1);
 				gameState.score += 1;
-				soundEffect('good.wav')
+				soundEffect('good.wav', 0.5)
 				updateScoreText();
 			}
 		}
@@ -1537,6 +1550,7 @@ function updateAvatar(){
 	}
 	if (lotus != null && avatar.position.distanceTo(lotus.position) < 3 && gameState.score >= 4) {
 		gameState.scene = 'youwon';
+		soundEffect('win_sound.mp4', 0.15);
 	}
 
 	// fix x z rotation bug, make avatar vertical
@@ -1550,6 +1564,13 @@ function updateSuzyOBJ(){
 	var t = clock.getElapsedTime();
 	suzyOBJ.material.emissive.r = Math.abs(Math.sin(t));
 	suzyOBJ.material.color.b=0
+
+    if (suzyOBJ.position.distanceTo(avatar.position) < 3){
+        gameState.health = 2;
+        suzyOBJ.position.y = -50;
+        suzyOBJ.__dirtyPosition = true;
+        soundEffect('good.wav', 0.5);
+    }
 }
 
 function updateFences() {
@@ -1612,7 +1633,7 @@ function animate() {
 
 		case "main":
 			if (!createdGuardian && lotus != null) {
-				initMonsterList(3);
+				initMonsterList(4);
 				createdGuardian = true;
 			}
 			updateAvatar();
