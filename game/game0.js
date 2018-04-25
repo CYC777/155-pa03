@@ -1013,6 +1013,9 @@ function createOBJmodel(newobj, objname, texturename, x, z, scale, gravity) {
                     	var p = genRandLoc();
                         avatar.position.set(p[0],20,p[1]);
                         avatar.__dirtyPosition = true;
+                        avatar.setAngularVelocity(new THREE.Vector3(0,0,0));
+                        avatar.__dirtyRotation = true;
+
                     }
                 }
             )
