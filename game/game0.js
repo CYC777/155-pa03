@@ -62,7 +62,7 @@ var controls =
 		    camera:camera}
 
 var gameState =
-     {score:0, health:10, scene:'main', camera:'none' }
+     {score:0, health:2, scene:'main', camera:'none' }
 
 
 // Here is the main game control
@@ -930,8 +930,25 @@ function createMonstermodel(monsterlist, newobj, objname, texturename, x, z, sca
 				function( other_object, relative_velocity, relative_rotation, contact_normal ) {
 					if (other_object==avatar){
 
-						gameState.scene = 'youlose';
+						gameState.health -= 1;
 
+                        for (var i = 0; i < monsters.length; i++) {
+                                if (monsters[i] == newobj){
+                                    monsters[i].position.y = -50;
+                                    monsters[i].__dirtyPosition = true;
+                                    monsters.splice(i,1);
+                                    soundEffect('bad.wav')
+                                    updateScoreText();
+                                }
+                            // if (level1Geo != null) {
+                            // 	var boo = level1Geo.containsPoint(monsters[i].position);
+                            // 	console.log("check boundingbox contains ? " + boo);
+                            // }
+                        }
+						if (gameState.health == 0) {
+                            gameState.scene = 'youlose';
+						}
+						// gameState.scene = 'youlose';
 					}
 					else if (fences.indexOf(other_object) > -1) {
 						gameState.scene = 'youwon';
@@ -1288,6 +1305,7 @@ function updateMonsters() {
 				monsters[i].__dirtyPosition = true;
 				monsters.splice(i,1);
 				gameState.score += 1;
+				soundEffect('good.wav')
 				updateScoreText();
 			}
 		}
