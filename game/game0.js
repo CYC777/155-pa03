@@ -5,8 +5,6 @@ This is a ThreeJS program which implements a simple game
 The user moves a cube around the board trying to knock balls into a cone
 
 
-Todo: 3. fix bugs avatar can go inside mountain
-Todo: 4. Create game function about avatar -- monkey
 
 */
 
@@ -17,7 +15,6 @@ var scene, renderer;  // all threejs programs need these
 var camera, avatarCam, edgeCam;  // we have two cameras in the main scene
 var avatar;
 var monkeyAvatar;
-var brs;   //big red sphere
 // here are some mesh objects ...
 var cycOBJ, cycOBJ2;
 var newobj2;
@@ -130,10 +127,10 @@ function initTextMesh(){
 //Jacob----------------------------------------------------------------------top
 function createStartText(font) {
 	var textGeometry1 =
-		new THREE.TextGeometry ('PA03',
+		new THREE.TextGeometry ('Adventrue',
 		{
 			font: font,
-			size: 4,
+			size: 2,
 			height: 0,
 			curveSegments: 12,
 			bevelEnabled: false,
@@ -159,7 +156,7 @@ function createStartText(font) {
 
 	var textMaterial1 = new THREE.MeshBasicMaterial ( {color: 'yellow'});
 	var textMesh1 = new THREE.Mesh( textGeometry1, textMaterial1);
-	textMesh1.position.set(-7,0,0);
+	textMesh1.position.set(-5,0,0);
 	startScene.add(textMesh1);
 
 
@@ -623,47 +620,7 @@ function randN(n){
 	return Math.random()*n;
 }
 
-function addBalls(){
-	var numBalls = 20;
 
-
-	for(i=0;i<numBalls;i++){
-		var ball = createBall();
-		ball.position.set(randN(20)+15,30,randN(20)+15);
-		scene.add(ball);
-
-		ball.addEventListener( 'collision',
-			function( other_object, relative_velocity, relative_rotation, contact_normal ) {
-				if (other_object==cone){
-					gameState.health++;
-					console.log("ball "+i+" hit the cone");
-					soundEffect('good.wav');
-					gameState.score += 1;  // add one to the score
-					updateScoreText();
-					if (gameState.score==numBalls) {
-						gameState.scene='youwon';
-					}
-
-					//Jacob----------------------------------------------------------------------Top
-					//when the user gets a score of 5, a plow appears as a sort of powerup
-					if (gameState.score == 5) {
-						createPLow();
-					}
-					//Jacob-----------------------------------------------------------------------bottom
-
-        //scene.remove(ball);  // this isn't working ...
-					// make the ball drop below the scene ..
-					// threejs doesn't let us remove it from the schene...
-					this.position.y = this.position.y - 100;
-					this.__dirtyPosition = true;
-				}
-      else if (other_object == avatar){
-        gameState.health ++;
-      }
-			}
-		)
-	}
-}
 
 function playGameMusic(){
 	// create an AudioListener and add it to the camera
@@ -1231,13 +1188,7 @@ function keydown(event){
 		gameState.score = 0;
 		gameState.health = 10;
 		updateScoreText();
-		// next reposition the big red sphere (brs)
-		brs.position.set(-40,40,40);
-		brs.__dirtyPosition = true;
-		brs.setLinearVelocity(0,1,0);
-		addBalls();
 		return;
-
 	}
 	if (gameState.scene == 'start' && ( event.key == 'p' || event.key == 'P')) {
 		gameState.scene = 'instructions';
