@@ -1676,8 +1676,14 @@ function animate() {
 
 		//draw heads up display ..
 	var info = document.getElementById("info");
-	info.innerHTML='<div style="font-size:24pt">Score: '
-		+ gameState.score
-		+ " health="+gameState.health
-		+ '</div>';
+
+	if (gameState.scene == 'main') {
+        info.innerHTML='<div style="font-size:24pt">Score: '
+            + gameState.score
+            + " health="+gameState.health
+            + '</div>';
+	} else if (gameState.scene == 'youlose' || gameState.scene == 'youwon') {
+        info.innerHTML='<div style="font-size:24pt">Please Refresh To Restart Game</div>';
+	}
+
 	}
