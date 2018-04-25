@@ -127,7 +127,7 @@ function initTextMesh(){
 //Jacob----------------------------------------------------------------------top
 function createStartText(font) {
 	var textGeometry1 =
-		new THREE.TextGeometry ('Adventrue',
+		new THREE.TextGeometry ('Adventure',
 		{
 			font: font,
 			size: 2,
@@ -514,12 +514,9 @@ function createOBJList(list, names, textures, scales, gravity) {
 		var mesh = null;
 		var p = genRandLoc();
 
-		mesh = createOBJmodel(mesh, names[i], textures[i],
+		createOBJmodel(mesh, names[i], textures[i],
 			p[0], p[1], scales[i], gravity);
-
-
-		list.push(mesh);
-	}
+    }
 }
 
 function updateScoreText() {
@@ -1009,6 +1006,16 @@ function createOBJmodel(newobj, objname, texturename, x, z, scale, gravity) {
 
 			scene.add(newobj);
 			console.log("just added newOBJ");
+
+			newobj.addEventListener( 'collision',
+                function( other_object, relative_velocity, relative_rotation, contact_normal ) {
+                    if (other_object==avatar){
+                    	var p = genRandLoc();
+                        avatar.position.set(p[0],20,p[1]);
+                        avatar.__dirtyPosition = true;
+                    }
+                }
+            )
 			//suzyOBJ = new Physijs.BoxMesh(obj);
 
 			//
